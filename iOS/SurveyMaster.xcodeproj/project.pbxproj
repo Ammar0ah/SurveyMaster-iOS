@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4FA62C6092B0385875EDE349 /* Pods_SurveyMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE368F499E099D4504F6BA5 /* Pods_SurveyMaster.framework */; };
+		AC06753A22A30CF100399E76 /* requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06753922A30CF100399E76 /* requests.swift */; };
+		AC97319522A26A3B00A78D8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC97319422A26A3B00A78D8A /* AppDelegate.swift */; };
+		AC97319722A26A3B00A78D8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC97319622A26A3B00A78D8A /* ViewController.swift */; };
+		AC97319A22A26A3B00A78D8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC97319822A26A3B00A78D8A /* Main.storyboard */; };
+		AC97319C22A26A3C00A78D8A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC97319B22A26A3C00A78D8A /* Images.xcassets */; };
+		AC97319F22A26A3C00A78D8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC97319D22A26A3C00A78D8A /* LaunchScreen.storyboard */; };
+		AC9731A722A2BA3F00A78D8A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9731A622A2BA3F00A78D8A /* LoginViewController.swift */; };
+		AC9731A922A2C55D00A78D8A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9731A822A2C55D00A78D8A /* RegisterViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8DE368F499E099D4504F6BA5 /* Pods_SurveyMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurveyMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC06753922A30CF100399E76 /* requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requests.swift; sourceTree = "<group>"; };
+		AC97319122A26A3B00A78D8A /* SurveyMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurveyMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC97319422A26A3B00A78D8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AC97319622A26A3B00A78D8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AC97319922A26A3B00A78D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AC97319B22A26A3C00A78D8A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AC97319E22A26A3C00A78D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AC9731A022A26A3C00A78D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC9731A622A2BA3F00A78D8A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AC9731A822A2C55D00A78D8A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D32D49D593C6C7841FB9A28D /* Pods-SurveyMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyMaster.release.xcconfig"; path = "Target Support Files/Pods-SurveyMaster/Pods-SurveyMaster.release.xcconfig"; sourceTree = "<group>"; };
+		E36391187978C88130034878 /* Pods-SurveyMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyMaster.debug.xcconfig"; path = "Target Support Files/Pods-SurveyMaster/Pods-SurveyMaster.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC97318E22A26A3B00A78D8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FA62C6092B0385875EDE349 /* Pods_SurveyMaster.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC06753522A3045900399E76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AC06753622A3046500399E76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AC97319D22A26A3C00A78D8A /* LaunchScreen.storyboard */,
+				AC97319822A26A3B00A78D8A /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AC06753722A3047300399E76 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AC97319422A26A3B00A78D8A /* AppDelegate.swift */,
+				AC97319622A26A3B00A78D8A /* ViewController.swift */,
+				AC9731A822A2C55D00A78D8A /* RegisterViewController.swift */,
+				AC9731A622A2BA3F00A78D8A /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AC06753822A304CF00399E76 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AC9731A022A26A3C00A78D8A /* Info.plist */,
+				AC06753922A30CF100399E76 /* requests.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AC97318822A26A3B00A78D8A = {
+			isa = PBXGroup;
+			children = (
+				AC97319322A26A3B00A78D8A /* SurveyMaster */,
+				AC97319222A26A3B00A78D8A /* Products */,
+				F81F3C155690897123337F20 /* Pods */,
+				EA1E0CC809A5D749AFC3A56E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AC97319222A26A3B00A78D8A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC97319122A26A3B00A78D8A /* SurveyMaster.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC97319322A26A3B00A78D8A /* SurveyMaster */ = {
+			isa = PBXGroup;
+			children = (
+				AC06753522A3045900399E76 /* Model */,
+				AC06753622A3046500399E76 /* View */,
+				AC06753722A3047300399E76 /* Controller */,
+				AC06753822A304CF00399E76 /* Supporting Files */,
+				AC97319B22A26A3C00A78D8A /* Images.xcassets */,
+			);
+			path = SurveyMaster;
+			sourceTree = "<group>";
+		};
+		EA1E0CC809A5D749AFC3A56E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8DE368F499E099D4504F6BA5 /* Pods_SurveyMaster.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F81F3C155690897123337F20 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E36391187978C88130034878 /* Pods-SurveyMaster.debug.xcconfig */,
+				D32D49D593C6C7841FB9A28D /* Pods-SurveyMaster.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC97319022A26A3B00A78D8A /* SurveyMaster */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC9731A322A26A3C00A78D8A /* Build configuration list for PBXNativeTarget "SurveyMaster" */;
+			buildPhases = (
+				5A28B7B714999670472A3359 /* [CP] Check Pods Manifest.lock */,
+				AC97318D22A26A3B00A78D8A /* Sources */,
+				AC97318E22A26A3B00A78D8A /* Frameworks */,
+				AC97318F22A26A3B00A78D8A /* Resources */,
+				CB8346298F0C8F532781020D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SurveyMaster;
+			productName = SurveyMaster;
+			productReference = AC97319122A26A3B00A78D8A /* SurveyMaster.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC97318922A26A3B00A78D8A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Ammar Al-Helali";
+				TargetAttributes = {
+					AC97319022A26A3B00A78D8A = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = AC97318C22A26A3B00A78D8A /* Build configuration list for PBXProject "SurveyMaster" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC97318822A26A3B00A78D8A;
+			productRefGroup = AC97319222A26A3B00A78D8A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC97319022A26A3B00A78D8A /* SurveyMaster */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC97318F22A26A3B00A78D8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC97319F22A26A3C00A78D8A /* LaunchScreen.storyboard in Resources */,
+				AC97319C22A26A3C00A78D8A /* Images.xcassets in Resources */,
+				AC97319A22A26A3B00A78D8A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5A28B7B714999670472A3359 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SurveyMaster-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB8346298F0C8F532781020D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SurveyMaster/Pods-SurveyMaster-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SurveyMaster/Pods-SurveyMaster-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC97318D22A26A3B00A78D8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC9731A722A2BA3F00A78D8A /* LoginViewController.swift in Sources */,
+				AC97319722A26A3B00A78D8A /* ViewController.swift in Sources */,
+				AC97319522A26A3B00A78D8A /* AppDelegate.swift in Sources */,
+				AC06753A22A30CF100399E76 /* requests.swift in Sources */,
+				AC9731A922A2C55D00A78D8A /* RegisterViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AC97319822A26A3B00A78D8A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC97319922A26A3B00A78D8A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AC97319D22A26A3C00A78D8A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC97319E22A26A3C00A78D8A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AC9731A122A26A3C00A78D8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AC9731A222A26A3C00A78D8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC9731A422A26A3C00A78D8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E36391187978C88130034878 /* Pods-SurveyMaster.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68JGD4NLPA;
+				INFOPLIST_FILE = SurveyMaster/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ammar0ah.SurveyMaster;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC9731A522A26A3C00A78D8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D32D49D593C6C7841FB9A28D /* Pods-SurveyMaster.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68JGD4NLPA;
+				INFOPLIST_FILE = SurveyMaster/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ammar0ah.SurveyMaster;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC97318C22A26A3B00A78D8A /* Build configuration list for PBXProject "SurveyMaster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC9731A122A26A3C00A78D8A /* Debug */,
+				AC9731A222A26A3C00A78D8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC9731A322A26A3C00A78D8A /* Build configuration list for PBXNativeTarget "SurveyMaster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC9731A422A26A3C00A78D8A /* Debug */,
+				AC9731A522A26A3C00A78D8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC97318922A26A3B00A78D8A /* Project object */;
+}

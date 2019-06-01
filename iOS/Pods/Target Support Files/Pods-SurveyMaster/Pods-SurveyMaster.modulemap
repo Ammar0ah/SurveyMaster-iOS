@@ -1,0 +1,6 @@
+framework module Pods_SurveyMaster {
+  umbrella header "Pods-SurveyMaster-umbrella.h"
+
+  export *
+  module * { export * }
+}
