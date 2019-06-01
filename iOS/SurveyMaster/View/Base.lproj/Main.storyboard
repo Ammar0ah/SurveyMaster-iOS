@@ -135,6 +135,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="e40-ao-anA" kind="show" id="q9Y-Pw-k3X"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.33333333333333331" green="0.23529411764705882" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -222,6 +225,7 @@
                                 </state>
                                 <connections>
                                     <action selector="registerBtn:" destination="8J7-2c-GX8" eventType="touchUpInside" id="Nft-xb-I6m"/>
+                                    <segue destination="e40-ao-anA" kind="show" id="K2d-Sj-yuU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6R-hy-Xmn">
@@ -273,6 +277,22 @@
             </objects>
             <point key="canvasLocation" x="1870" y="-351"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="Grf-MD-9DP">
+            <objects>
+                <viewController id="6tc-U5-8PE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LnY-PQ-xOE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="SPj-fA-BZ2"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="9kc-KR-Y1w"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M1W-sJ-Myq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3650.4000000000001" y="-75.369458128078819"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="cD0-jh-j0d">
             <objects>
@@ -291,5 +311,25 @@
             </objects>
             <point key="canvasLocation" x="-162" y="117"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="mu4-v3-dbY">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="e40-ao-anA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ete-i6-doR">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="6tc-U5-8PE" kind="relationship" relationship="viewControllers" id="hjY-Ir-65E"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cCy-7F-Phd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2708" y="-75.369458128078819"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="K2d-Sj-yuU"/>
+    </inferredMetricsTieBreakers>
 </document>
