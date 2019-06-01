@@ -1,4 +1,6 @@
 let port = 5000
-export {
-  port
-};
+let jwtPrivateKey = '$$$SurveyMaster$$$@@&^^^&'
+module.exports = {
+  port,
+  jwtPrivateKey
+}
