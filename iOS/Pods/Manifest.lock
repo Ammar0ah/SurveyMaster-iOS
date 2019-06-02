@@ -1,24 +1,28 @@
 PODS:
   - Alamofire (4.8.2)
+  - GSMessages (1.7.2)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
+  - GSMessages
   - SVProgressHUD
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - GSMessages
     - SVProgressHUD
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  GSMessages: 05bedc25bd278a1bf4260d6de526de0fc84cfef7
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: d18c540a03b8dbab53ec511ebd62383a78eef00c
+PODFILE CHECKSUM: 0a27e3ef02dfda1b790a002b77f4f6721a200ca8
 
 COCOAPODS: 1.6.1

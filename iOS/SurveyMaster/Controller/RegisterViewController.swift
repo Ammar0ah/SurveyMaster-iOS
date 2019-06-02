@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SVProgressHUD
+import GSMessages
 class RegisterViewController: UIViewController {
     var user = User()
     @IBOutlet weak var firstNameTxtField: UITextField!
@@ -20,7 +21,10 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTxt: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        firstNameTxtField.text = "ammar"
+        lastNameTxt.text = "helali"
+        emailTxt.text = "ammar@helali.com"
+        passwordTxt.text = "123123123"
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -41,31 +45,24 @@ class RegisterViewController: UIViewController {
         Alamofire.request(RegistationURL, method: .post, parameters:params,encoding: JSONEncoding.default)
             .responseJSON{
                 response in
+                SVProgressHUD.show()
                 if response.result.isSuccess{
                     if let response = response.result.value {
-                     
                         let responseJSON = JSON(response)
-                  
-                        self.updateUserData(json: responseJSON,error : responseJSON[0].string! )
-                    
-                    }
-            
+                        self.updateUserData(json: responseJSON,error : responseJSON[0].string ?? "" )
+                            }
                 }
                 else {
-                    print(response.result.error)
-                    SVProgressHUD.showError(withStatus:"Could not connect to the server , please check your connection and try again")
+                        if let data = response.data {
+                        let error = String(data: data, encoding: String.Encoding.utf8)
+                          SVProgressHUD.showError(withStatus:error)
+                          SVProgressHUD.dismiss(withDelay: 1)
+                    }
                 }
+                SVProgressHUD.dismiss(withDelay: 0.5)
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
     func updateUserData(json:JSON,error:String)
     {
         if let id = json["_id"].string{

@@ -16,6 +16,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTxt: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTxt.text = "ammar@helali.com"
+        passwordTxt.text = "123123123"
 
         // Do any additional setup after loading the view.
     }
@@ -40,31 +42,43 @@ class LoginViewController: UIViewController {
         Alamofire.request(LoginURL, method: .post, parameters:params,encoding: JSONEncoding.default)
             .responseJSON{
                 response in
+                SVProgressHUD.show()
                 if response.result.isSuccess{
                     if let response = response.result.value {
-                        
                         let responseJSON = JSON(response)
                         print(response)
                         self.updateUserData(json: responseJSON )
-                        
                     }
                     
                 }
                 else {
-                    print(response.error)
-                  //  SVProgressHUD.showError(withStatus:response.result as! String)
+                        if let data = response.data {
+                        let error = String(data: data, encoding: String.Encoding.utf8)
+                            
+                        if error!.contains("email")
+                        {
+                            SVProgressHUD.showError(withStatus:error)
+                            SVProgressHUD.dismiss(withDelay: 1)
+                        }
+                        else {
+                            self.performSegue(withIdentifier: "LoginToView", sender: self)
+                        }
+                    }
+                    
                 }
+                SVProgressHUD.dismiss(withDelay:0.5)
         }
     }
     func updateUserData(json:JSON)
     {
-        if   emailTxt.text! != "" || passwordTxt.text! != "" {
+        print("I'm in")
+        if  json["email"].string != nil{
             user.email = json["email"].string!
-            performSegue(withIdentifier: "RegisterToView", sender: self)
+            performSegue(withIdentifier: "LoginToView", sender: self)
         }
             
         else{
-            SVProgressHUD.showError(withStatus: "Invalid input, fix your inputs and try again")
+            SVProgressHUD.showError(withStatus: json[0].string!)
             SVProgressHUD.dismiss(withDelay: 1.5)
         }
         
