@@ -8,4 +8,6 @@
 
 import Foundation
 
-let getSurveysURL = "http://192.168.1.9:3000/"
+let URL = "http://192.168.1.9:5000/"
+let RegistationURL = URL + "api/users"
+let LoginURL = URL + "api/auth"

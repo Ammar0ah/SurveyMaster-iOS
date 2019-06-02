@@ -7,9 +7,13 @@
 //
 
 import UIKit
-
+import Alamofire
+import SwiftyJSON
+import SVProgressHUD
 class LoginViewController: UIViewController {
-
+    let user = User()
+    @IBOutlet weak var emailTxt: UITextField!
+    @IBOutlet weak var passwordTxt: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,5 +32,42 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+   
+    @IBAction func loginBtn(_ sender: Any) {
+        
+        let params = ["email":emailTxt.text! ,"password":passwordTxt.text!]
+        
+        Alamofire.request(LoginURL, method: .post, parameters:params,encoding: JSONEncoding.default)
+            .responseJSON{
+                response in
+                if response.result.isSuccess{
+                    if let response = response.result.value {
+                        
+                        let responseJSON = JSON(response)
+                        print(response)
+                        self.updateUserData(json: responseJSON )
+                        
+                    }
+                    
+                }
+                else {
+                    print(response.error)
+                  //  SVProgressHUD.showError(withStatus:response.result as! String)
+                }
+        }
+    }
+    func updateUserData(json:JSON)
+    {
+        if   emailTxt.text! != "" || passwordTxt.text! != "" {
+            user.email = json["email"].string!
+            performSegue(withIdentifier: "RegisterToView", sender: self)
+        }
+            
+        else{
+            SVProgressHUD.showError(withStatus: "Invalid input, fix your inputs and try again")
+            SVProgressHUD.dismiss(withDelay: 1.5)
+        }
+        
+        
+    }
 }

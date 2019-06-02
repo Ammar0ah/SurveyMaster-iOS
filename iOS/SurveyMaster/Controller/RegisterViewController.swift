@@ -8,8 +8,10 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
+import SVProgressHUD
 class RegisterViewController: UIViewController {
-
+    var user = User()
     @IBOutlet weak var firstNameTxtField: UITextField!
     
     @IBOutlet weak var lastNameTxt: UITextField!
@@ -27,14 +29,31 @@ class RegisterViewController: UIViewController {
 
     @IBAction func registerBtn(_ sender: Any) {
         
-        Alamofire.request("\(getSurveysURL)api/surveys", method: .get, parameters: nil)
+        if(passwordTxt.text!.count < 8)
+        {
+            SVProgressHUD.showInfo(withStatus: "Password length must be 8 characters at least! ")
+            SVProgressHUD.dismiss(withDelay: 1)
+            return
+        }
+        
+        let params = ["firstName": firstNameTxtField.text! , "lastName" : lastNameTxt.text! ,"email":emailTxt.text! ,"password":passwordTxt.text!]
+       
+        Alamofire.request(RegistationURL, method: .post, parameters:params,encoding: JSONEncoding.default)
             .responseJSON{
                 response in
                 if response.result.isSuccess{
-                    print(response.result.value!)
+                    if let response = response.result.value {
+                     
+                        let responseJSON = JSON(response)
+                  
+                        self.updateUserData(json: responseJSON,error : responseJSON[0].string! )
+                    
+                    }
+            
                 }
                 else {
-                    print("Failed")
+                    print(response.result.error)
+                    SVProgressHUD.showError(withStatus:"Could not connect to the server , please check your connection and try again")
                 }
         }
     }
@@ -47,5 +66,25 @@ class RegisterViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func updateUserData(json:JSON,error:String)
+    {
+        if let id = json["_id"].string{
+        user._id = json["_id"].string!
+         user.firstName = json["firstName"].string!
+         user.lastName  = json["lastName"].string!
+        user.email = json["email"].string!
+        performSegue(withIdentifier: "RegisterToView", sender: self)
+        }
+           
+        else{
+            if !error.contains("_id"){
+            SVProgressHUD.showError(withStatus: error)
+            SVProgressHUD.dismiss(withDelay: 1.5)
+            }
+            }
+  
+    
+    }
+  
 
 }
