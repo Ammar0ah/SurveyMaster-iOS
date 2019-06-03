@@ -13,6 +13,7 @@ import SVProgressHUD
 import GSMessages
 class RegisterViewController: UIViewController {
     var user = User()
+    var defaults = UserDefaults.standard
     @IBOutlet weak var firstNameTxtField: UITextField!
     
     @IBOutlet weak var lastNameTxt: UITextField!
@@ -50,7 +51,11 @@ class RegisterViewController: UIViewController {
                     if let response = response.result.value {
                         let responseJSON = JSON(response)
                         self.updateUserData(json: responseJSON,error : responseJSON[0].string ?? "" )
+                     
                             }
+                    if let token = response.response?.allHeaderFields["x-auth-token"] as? String{
+                        self.defaults.set(token, forKey: "token")
+                    }
                 }
                 else {
                         if let data = response.data {

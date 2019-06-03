@@ -17,6 +17,10 @@
 		AC97319F22A26A3C00A78D8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC97319D22A26A3C00A78D8A /* LaunchScreen.storyboard */; };
 		AC9731A722A2BA3F00A78D8A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9731A622A2BA3F00A78D8A /* LoginViewController.swift */; };
 		AC9731A922A2C55D00A78D8A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9731A822A2C55D00A78D8A /* RegisterViewController.swift */; };
+		ACFE4E4A22A57C1F009409BD /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFE4E4922A57C1F009409BD /* TabBar.storyboard */; };
+		ACFE4E4C22A57E91009409BD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE4E4B22A57E91009409BD /* TabBarController.swift */; };
+		ACFE4E4E22A57F1A009409BD /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE4E4D22A57F1A009409BD /* CreateViewController.swift */; };
+		ACFE4E5022A57F68009409BD /* MySurveysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE4E4F22A57F68009409BD /* MySurveysViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		AC9731A022A26A3C00A78D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC9731A622A2BA3F00A78D8A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AC9731A822A2C55D00A78D8A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		ACFE4E4922A57C1F009409BD /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		ACFE4E4B22A57E91009409BD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		ACFE4E4D22A57F1A009409BD /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		ACFE4E4F22A57F68009409BD /* MySurveysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySurveysViewController.swift; sourceTree = "<group>"; };
 		D32D49D593C6C7841FB9A28D /* Pods-SurveyMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyMaster.release.xcconfig"; path = "Target Support Files/Pods-SurveyMaster/Pods-SurveyMaster.release.xcconfig"; sourceTree = "<group>"; };
 		E36391187978C88130034878 /* Pods-SurveyMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyMaster.debug.xcconfig"; path = "Target Support Files/Pods-SurveyMaster/Pods-SurveyMaster.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,6 +67,7 @@
 		AC06753622A3046500399E76 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ACFE4E4922A57C1F009409BD /* TabBar.storyboard */,
 				AC97319D22A26A3C00A78D8A /* LaunchScreen.storyboard */,
 				AC97319822A26A3B00A78D8A /* Main.storyboard */,
 			);
@@ -70,8 +79,9 @@
 			children = (
 				AC97319422A26A3B00A78D8A /* AppDelegate.swift */,
 				AC97319622A26A3B00A78D8A /* ViewController.swift */,
-				AC9731A822A2C55D00A78D8A /* RegisterViewController.swift */,
-				AC9731A622A2BA3F00A78D8A /* LoginViewController.swift */,
+				ACFE4E4B22A57E91009409BD /* TabBarController.swift */,
+				ACFE4E5322A57FA1009409BD /* Account */,
+				ACFE4E5222A57F86009409BD /* Survey */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -113,6 +123,24 @@
 				AC97319B22A26A3C00A78D8A /* Images.xcassets */,
 			);
 			path = SurveyMaster;
+			sourceTree = "<group>";
+		};
+		ACFE4E5222A57F86009409BD /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				ACFE4E4D22A57F1A009409BD /* CreateViewController.swift */,
+				ACFE4E4F22A57F68009409BD /* MySurveysViewController.swift */,
+			);
+			path = Survey;
+			sourceTree = "<group>";
+		};
+		ACFE4E5322A57FA1009409BD /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				AC9731A822A2C55D00A78D8A /* RegisterViewController.swift */,
+				AC9731A622A2BA3F00A78D8A /* LoginViewController.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 		EA1E0CC809A5D749AFC3A56E /* Frameworks */ = {
@@ -192,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACFE4E4A22A57C1F009409BD /* TabBar.storyboard in Resources */,
 				AC97319F22A26A3C00A78D8A /* LaunchScreen.storyboard in Resources */,
 				AC97319C22A26A3C00A78D8A /* Images.xcassets in Resources */,
 				AC97319A22A26A3B00A78D8A /* Main.storyboard in Resources */,
@@ -258,12 +287,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACFE4E4E22A57F1A009409BD /* CreateViewController.swift in Sources */,
 				AC9731A722A2BA3F00A78D8A /* LoginViewController.swift in Sources */,
 				AC97319722A26A3B00A78D8A /* ViewController.swift in Sources */,
 				AC06753C22A3205F00399E76 /* User.swift in Sources */,
 				AC97319522A26A3B00A78D8A /* AppDelegate.swift in Sources */,
+				ACFE4E4C22A57E91009409BD /* TabBarController.swift in Sources */,
 				AC06753A22A30CF100399E76 /* requests.swift in Sources */,
 				AC9731A922A2C55D00A78D8A /* RegisterViewController.swift in Sources */,
+				ACFE4E5022A57F68009409BD /* MySurveysViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e40-ao-anA">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Create Survey-->
+        <scene sceneID="Grf-MD-9DP">
+            <objects>
+                <viewController id="6tc-U5-8PE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LnY-PQ-xOE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.75686274509999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Kvn-IG-IFA"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Create Survey" image="edit" selectedImage="edit" springLoaded="YES" id="9kc-KR-Y1w">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M1W-sJ-Myq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3542" y="-508"/>
+        </scene>
+        <!--My Surveys-->
+        <scene sceneID="d9L-60-9lB">
+            <objects>
+                <viewController id="T0N-4I-yIH" customClass="MySurveysViewController" customModule="SurveyMaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kAh-9x-Gko">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.75686274509803919" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Xd4-0h-Co1"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="My Surveys" image="list" id="ZaV-LT-Lac"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wWf-Ff-VSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3542" y="211"/>
+        </scene>
+        <!--Tab-->
+        <scene sceneID="mu4-v3-dbY">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="e40-ao-anA" customClass="tab" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ete-i6-doR">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="T0N-4I-yIH" kind="relationship" relationship="viewControllers" id="c7j-CX-zbM"/>
+                        <segue destination="6tc-U5-8PE" kind="relationship" relationship="viewControllers" id="hjY-Ir-65E"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cCy-7F-Phd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2708" y="-75.369458128078819"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="edit" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="list" width="21.333333969116211" height="21.333333969116211"/>
+    </resources>
+</document>

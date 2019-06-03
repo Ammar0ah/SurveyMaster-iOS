@@ -11,3 +11,4 @@ import Foundation
 let URL = "http://192.168.1.9:5000/"
 let RegistationURL = URL + "api/users"
 let LoginURL = URL + "api/auth"
+let ShowSurveysURL = URL + "api/surveys"

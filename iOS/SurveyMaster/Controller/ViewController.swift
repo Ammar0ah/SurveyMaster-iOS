@@ -9,10 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        if let token = defaults.string(forKey: "token"){
+            performSegue(withIdentifier: "WelcomeToView", sender: self)
+        }
+    
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
