@@ -1,34 +1,34 @@
 //
-//  MySurveysViewController.swift
+//  AccountViewController.swift
 //  SurveyMaster
 //
-//  Created by Ammar Al-Helali on 6/3/19.
+//  Created by Ammar Al-Helali on 6/4/19.
 //  Copyright © 2019 Ammar Al-Helali. All rights reserved.
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
-class MySurveysViewController: UIViewController {
+import SVProgressHUD
+
+class AccountViewController: UIViewController {
     let defaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
-        validatingSession()
+
         // Do any additional setup after loading the view.
     }
     
-    func validatingSession() {
-        let header = [
-            "x-auth-token" : defaults.string(forKey: "token")
-        ]
-        Alamofire.request(ShowSurveysURL, method: .get,parameters: nil, encoding: JSONEncoding.default, headers: header as! HTTPHeaders)
-            .responseJSON{
-                response in
-                print("response" ,response.result.value)
-            
-        }
+    @IBAction func logoutBtn(_ sender: Any) {
+        defaults.removeObject(forKey: "token")
+     
+        presentingViewController?.dismiss(animated: true, completion: {
+          SVProgressHUD.showSuccess(withStatus: "Logged out successfully")
+            SVProgressHUD.dismiss(withDelay: 1)
+        })
+     
+    
         
     }
+    
     /*
     // MARK: - Navigation
 

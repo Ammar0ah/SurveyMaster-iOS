@@ -10,23 +10,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Create Survey-->
+        <!--Create-->
         <scene sceneID="Grf-MD-9DP">
             <objects>
-                <viewController id="6tc-U5-8PE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Create" id="6tc-U5-8PE" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LnY-PQ-xOE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.80000000000000004" green="0.75686274509999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Kvn-IG-IFA"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Create Survey" image="edit" selectedImage="edit" springLoaded="YES" id="9kc-KR-Y1w">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="Create" id="LAV-qr-zhl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M1W-sJ-Myq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3542" y="-508"/>
+            <point key="canvasLocation" x="4447.826086956522" y="-508.69565217391306"/>
         </scene>
         <!--My Surveys-->
         <scene sceneID="d9L-60-9lB">
@@ -38,11 +36,11 @@
                         <color key="backgroundColor" red="0.80000000000000004" green="0.75686274509803919" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Xd4-0h-Co1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Surveys" image="list" id="ZaV-LT-Lac"/>
+                    <navigationItem key="navigationItem" title="My Surveys" largeTitleDisplayMode="always" id="xXp-5W-hcD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wWf-Ff-VSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3542" y="211"/>
+            <point key="canvasLocation" x="4575" y="231"/>
         </scene>
         <!--Tab-->
         <scene sceneID="mu4-v3-dbY">
@@ -55,17 +53,122 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="T0N-4I-yIH" kind="relationship" relationship="viewControllers" id="c7j-CX-zbM"/>
-                        <segue destination="6tc-U5-8PE" kind="relationship" relationship="viewControllers" id="hjY-Ir-65E"/>
+                        <segue destination="1Sn-xW-3RH" kind="relationship" relationship="viewControllers" id="c7j-CX-zbM"/>
+                        <segue destination="4tJ-UY-ltD" kind="relationship" relationship="viewControllers" id="hjY-Ir-65E"/>
+                        <segue destination="YD2-lr-72Z" kind="relationship" relationship="viewControllers" id="cCx-Dw-STv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCy-7F-Phd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2708" y="-75.369458128078819"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WFx-oG-9ep">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="4tJ-UY-ltD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="edit" selectedImage="edit" springLoaded="YES" id="9kc-KR-Y1w">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="6p0-3I-CTz">
+                        <rect key="frame" x="0.0" y="20" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6tc-U5-8PE" kind="relationship" relationship="rootViewController" id="iQs-aS-ick"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JnI-2q-Jaw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3540.579710144928" y="-508.69565217391306"/>
+        </scene>
+        <!--My Surveys-->
+        <scene sceneID="JAh-kz-uN9">
+            <objects>
+                <navigationController title="My Surveys" automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="1Sn-xW-3RH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="list" id="ZaV-LT-Lac"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="2Ea-aE-u1A">
+                        <rect key="frame" x="0.0" y="20" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j4V-pH-LWH">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="T0N-4I-yIH" kind="relationship" relationship="rootViewController" id="AJD-oq-QDh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Det-os-jPv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3541" y="231"/>
+        </scene>
+        <!--Account-->
+        <scene sceneID="CWj-g2-3BT">
+            <objects>
+                <viewController id="9Kc-br-lNc" customClass="AccountViewController" customModule="SurveyMaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j51-nC-jgY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unL-Si-zCQ">
+                                <rect key="frame" x="107" y="343" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.33333333329999998" green="0.23529411759999999" blue="0.5450980392" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="8po-HO-jIF"/>
+                                    <constraint firstAttribute="height" constant="50" id="bpH-Gb-nvY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Log out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutBtn:" destination="9Kc-br-lNc" eventType="touchUpInside" id="Bqg-MK-tln"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.61960784310000006" green="0.66274509800000003" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="unL-Si-zCQ" firstAttribute="centerX" secondItem="j51-nC-jgY" secondAttribute="centerX" id="iha-5i-fPP"/>
+                            <constraint firstItem="unL-Si-zCQ" firstAttribute="centerY" secondItem="j51-nC-jgY" secondAttribute="centerY" id="ofQ-q3-V7n"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J7Q-H5-wqA"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Account" largeTitleDisplayMode="always" id="tUT-aw-FHw">
+                        <string key="prompt" base64-UTF8="YES">
+CQ
+</string>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VCp-g7-dc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3862" y="989"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ylc-qW-Uey">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="YD2-lr-72Z" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="user" id="T2w-WR-VTM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="VBX-Ee-Owj">
+                        <rect key="frame" x="0.0" y="20" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9Kc-br-lNc" kind="relationship" relationship="rootViewController" id="h3G-Ut-CXZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IW2-1g-x75" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2707" y="989"/>
+        </scene>
     </scenes>
     <resources>
         <image name="edit" width="21.333333969116211" height="21.333333969116211"/>
         <image name="list" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="user" width="21.333333969116211" height="21.333333969116211"/>
     </resources>
 </document>
