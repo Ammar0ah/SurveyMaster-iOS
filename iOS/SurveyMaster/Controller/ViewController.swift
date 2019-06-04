@@ -14,11 +14,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let token = defaults.string(forKey: "token"){
+           
             performSegue(withIdentifier: "WelcomeToView", sender: self)
         }
     
     }
     override func viewWillAppear(_ animated: Bool) {
+       
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
 

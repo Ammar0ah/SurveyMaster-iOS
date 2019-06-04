@@ -17,6 +17,9 @@
 		AC97319F22A26A3C00A78D8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC97319D22A26A3C00A78D8A /* LaunchScreen.storyboard */; };
 		AC9731A722A2BA3F00A78D8A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9731A622A2BA3F00A78D8A /* LoginViewController.swift */; };
 		AC9731A922A2C55D00A78D8A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9731A822A2C55D00A78D8A /* RegisterViewController.swift */; };
+		AC9B004022A694E00067B02B /* SurveyItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9B003E22A694E00067B02B /* SurveyItemTableViewCell.swift */; };
+		AC9B004122A694E10067B02B /* SurveyItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9B003F22A694E00067B02B /* SurveyItemTableViewCell.xib */; };
+		AC9B004322A6A9210067B02B /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9B004222A6A9210067B02B /* Survey.swift */; };
 		ACFE4E4A22A57C1F009409BD /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFE4E4922A57C1F009409BD /* TabBar.storyboard */; };
 		ACFE4E4C22A57E91009409BD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE4E4B22A57E91009409BD /* TabBarController.swift */; };
 		ACFE4E4E22A57F1A009409BD /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE4E4D22A57F1A009409BD /* CreateViewController.swift */; };
@@ -37,6 +40,9 @@
 		AC9731A022A26A3C00A78D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC9731A622A2BA3F00A78D8A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AC9731A822A2C55D00A78D8A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		AC9B003E22A694E00067B02B /* SurveyItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyItemTableViewCell.swift; sourceTree = "<group>"; };
+		AC9B003F22A694E00067B02B /* SurveyItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurveyItemTableViewCell.xib; sourceTree = "<group>"; };
+		AC9B004222A6A9210067B02B /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 		ACFE4E4922A57C1F009409BD /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		ACFE4E4B22A57E91009409BD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		ACFE4E4D22A57F1A009409BD /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				AC06753B22A3205F00399E76 /* User.swift */,
+				AC9B004222A6A9210067B02B /* Survey.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -69,6 +76,7 @@
 		AC06753622A3046500399E76 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AC9B003D22A694820067B02B /* SurveyCell */,
 				ACFE4E4922A57C1F009409BD /* TabBar.storyboard */,
 				AC97319D22A26A3C00A78D8A /* LaunchScreen.storyboard */,
 				AC97319822A26A3B00A78D8A /* Main.storyboard */,
@@ -125,6 +133,15 @@
 				AC97319B22A26A3C00A78D8A /* Images.xcassets */,
 			);
 			path = SurveyMaster;
+			sourceTree = "<group>";
+		};
+		AC9B003D22A694820067B02B /* SurveyCell */ = {
+			isa = PBXGroup;
+			children = (
+				AC9B003E22A694E00067B02B /* SurveyItemTableViewCell.swift */,
+				AC9B003F22A694E00067B02B /* SurveyItemTableViewCell.xib */,
+			);
+			path = SurveyCell;
 			sourceTree = "<group>";
 		};
 		ACFE4E5222A57F86009409BD /* Survey */ = {
@@ -226,6 +243,7 @@
 				ACFE4E4A22A57C1F009409BD /* TabBar.storyboard in Resources */,
 				AC97319F22A26A3C00A78D8A /* LaunchScreen.storyboard in Resources */,
 				AC97319C22A26A3C00A78D8A /* Images.xcassets in Resources */,
+				AC9B004122A694E10067B02B /* SurveyItemTableViewCell.xib in Resources */,
 				AC97319A22A26A3B00A78D8A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,8 +283,10 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SurveyMaster/Pods-SurveyMaster-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/GSMessages/GSMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMoment/SwiftMoment.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -274,8 +294,10 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GSMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMoment.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,7 +319,9 @@
 				AC97319522A26A3B00A78D8A /* AppDelegate.swift in Sources */,
 				ACFE4E4C22A57E91009409BD /* TabBarController.swift in Sources */,
 				ACFE4E5522A5DA12009409BD /* AccountViewController.swift in Sources */,
+				AC9B004022A694E00067B02B /* SurveyItemTableViewCell.swift in Sources */,
 				AC06753A22A30CF100399E76 /* requests.swift in Sources */,
+				AC9B004322A6A9210067B02B /* Survey.swift in Sources */,
 				AC9731A922A2C55D00A78D8A /* RegisterViewController.swift in Sources */,
 				ACFE4E5022A57F68009409BD /* MySurveysViewController.swift in Sources */,
 			);

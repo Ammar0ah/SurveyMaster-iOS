@@ -19,7 +19,7 @@ class AccountViewController: UIViewController {
     
     @IBAction func logoutBtn(_ sender: Any) {
         defaults.removeObject(forKey: "token")
-     
+        
         presentingViewController?.dismiss(animated: true, completion: {
           SVProgressHUD.showSuccess(withStatus: "Logged out successfully")
             SVProgressHUD.dismiss(withDelay: 1)

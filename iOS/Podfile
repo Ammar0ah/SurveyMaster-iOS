@@ -9,4 +9,6 @@ target 'SurveyMaster' do
     pod 'Alamofire'
     pod 'SVProgressHUD'
     pod "GSMessages"
+    pod 'ChameleonFramework'
+    pod 'SwiftMoment'
 end
