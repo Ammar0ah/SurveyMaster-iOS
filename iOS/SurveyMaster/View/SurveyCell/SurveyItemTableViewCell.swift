@@ -18,10 +18,12 @@ class SurveyItemTableViewCell: UITableViewCell {
 
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var deleteImg: UIImageView!
+    @IBOutlet var ContentView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
        
-      
+        ContentView.layer.cornerRadius = 10
         // Initialization code
     }
 

@@ -34,6 +34,7 @@ class MySurveysViewControl: UITableViewController {
         Alamofire.request(ShowSurveysURL, method: .get,parameters: nil, encoding: JSONEncoding.default, headers: header as! HTTPHeaders)
             .responseJSON{
                 response in
+                print(response)
                 if response.result.isSuccess{
                     if let response = response.result.value {
                         let data = JSON(response).arrayValue
@@ -44,7 +45,8 @@ class MySurveysViewControl: UITableViewController {
                     
                 }
                 else{
-                    self.showMessage("error Happenend", type: .error)
+                    
+                    self.showMessage("error Happenend check your connection", type: .error)
                 }
 
             
