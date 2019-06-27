@@ -27,6 +27,9 @@
 		AC9B004022A694E00067B02B /* SurveyItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9B003E22A694E00067B02B /* SurveyItemTableViewCell.swift */; };
 		AC9B004122A694E10067B02B /* SurveyItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9B003F22A694E00067B02B /* SurveyItemTableViewCell.xib */; };
 		AC9B004322A6A9210067B02B /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9B004222A6A9210067B02B /* Survey.swift */; };
+		ACBE47D022C2849C00E72BB1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE47CF22C2849C00E72BB1 /* Question.swift */; };
+		ACBE47D322C28EF400E72BB1 /* RangeQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE47D222C28EF400E72BB1 /* RangeQuestion.swift */; };
+		ACBE47D522C293F200E72BB1 /* SliderQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE47D422C293F200E72BB1 /* SliderQuestion.swift */; };
 		ACFE4E4A22A57C1F009409BD /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFE4E4922A57C1F009409BD /* TabBar.storyboard */; };
 		ACFE4E4C22A57E91009409BD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE4E4B22A57E91009409BD /* TabBarController.swift */; };
 		ACFE4E5022A57F68009409BD /* MySurveysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE4E4F22A57F68009409BD /* MySurveysViewController.swift */; };
@@ -56,6 +59,9 @@
 		AC9B003E22A694E00067B02B /* SurveyItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyItemTableViewCell.swift; sourceTree = "<group>"; };
 		AC9B003F22A694E00067B02B /* SurveyItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurveyItemTableViewCell.xib; sourceTree = "<group>"; };
 		AC9B004222A6A9210067B02B /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
+		ACBE47CF22C2849C00E72BB1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		ACBE47D222C28EF400E72BB1 /* RangeQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeQuestion.swift; sourceTree = "<group>"; };
+		ACBE47D422C293F200E72BB1 /* SliderQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderQuestion.swift; sourceTree = "<group>"; };
 		ACFE4E4922A57C1F009409BD /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		ACFE4E4B22A57E91009409BD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		ACFE4E4F22A57F68009409BD /* MySurveysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySurveysViewController.swift; sourceTree = "<group>"; };
@@ -79,8 +85,10 @@
 		AC06753522A3045900399E76 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ACBE47D122C28E8200E72BB1 /* Question Types */,
 				AC06753B22A3205F00399E76 /* User.swift */,
 				AC9B004222A6A9210067B02B /* Survey.swift */,
+				ACBE47CF22C2849C00E72BB1 /* Question.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,6 +210,15 @@
 				AC9B003F22A694E00067B02B /* SurveyItemTableViewCell.xib */,
 			);
 			path = SurveyCell;
+			sourceTree = "<group>";
+		};
+		ACBE47D122C28E8200E72BB1 /* Question Types */ = {
+			isa = PBXGroup;
+			children = (
+				ACBE47D222C28EF400E72BB1 /* RangeQuestion.swift */,
+				ACBE47D422C293F200E72BB1 /* SliderQuestion.swift */,
+			);
+			path = "Question Types";
 			sourceTree = "<group>";
 		};
 		ACFE4E5222A57F86009409BD /* Survey */ = {
@@ -375,8 +392,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC9731A722A2BA3F00A78D8A /* LoginViewController.swift in Sources */,
+				ACBE47D022C2849C00E72BB1 /* Question.swift in Sources */,
 				AC08813522A955FF008F0F61 /* CreateTableViewController.swift in Sources */,
 				AC97319722A26A3B00A78D8A /* ViewController.swift in Sources */,
+				ACBE47D522C293F200E72BB1 /* SliderQuestion.swift in Sources */,
 				AC06753C22A3205F00399E76 /* User.swift in Sources */,
 				AC08813222A930DD008F0F61 /* SliderTableViewCell.swift in Sources */,
 				AC97319522A26A3B00A78D8A /* AppDelegate.swift in Sources */,
@@ -386,6 +405,7 @@
 				AC08812D22A92820008F0F61 /* TextTableViewCell.swift in Sources */,
 				AC9B004022A694E00067B02B /* SurveyItemTableViewCell.swift in Sources */,
 				AC06753A22A30CF100399E76 /* requests.swift in Sources */,
+				ACBE47D322C28EF400E72BB1 /* RangeQuestion.swift in Sources */,
 				AC9B004322A6A9210067B02B /* Survey.swift in Sources */,
 				AC9731A922A2C55D00A78D8A /* RegisterViewController.swift in Sources */,
 				ACFE4E5022A57F68009409BD /* MySurveysViewController.swift in Sources */,

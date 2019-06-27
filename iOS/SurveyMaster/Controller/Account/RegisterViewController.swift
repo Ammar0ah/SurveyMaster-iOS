@@ -70,7 +70,7 @@ class RegisterViewController: UIViewController {
     
     func updateUserData(json:JSON,error:String)
     {
-        if let id = json["_id"].string{
+        if json["_id"].string != nil{
         user._id = json["_id"].string!
          user.firstName = json["firstName"].string!
          user.lastName  = json["lastName"].string!

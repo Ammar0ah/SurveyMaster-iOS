@@ -12,7 +12,7 @@ class SliderTableViewCell: UITableViewCell {
     
     let TYPE = "QUESTION_SLIDER"
     @IBOutlet var toggle: UISwitch!
-    @IBOutlet var slider: UISlider!
+
     var step : Int?
     var min : Float?
     var max : Float?
@@ -21,7 +21,7 @@ class SliderTableViewCell: UITableViewCell {
         // Initialization code
 //        slider.minimumValue = min ?? 0
 //        slider.maximumValue = max ?? 0
-        slider.addTarget(self, action: #selector(sliderValueChanged), for: UIControl.Event.valueChanged)
+      
         
     }
 
@@ -36,10 +36,5 @@ class SliderTableViewCell: UITableViewCell {
 //        sender.setValue(newValue + Float(step!), animated: true)
 //    }
     
-    @objc func sliderValueChanged(sender: UISlider){
-        print(sender.value)
-        
-        //        ValueLabel.text = "\(sender.value)" // Note: not included in this test!!!
-        
-    }
+   
 }

@@ -10,13 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
     let defaults = UserDefaults.standard
-    
+    let slider = SliderQuestion("title","desc")
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        if let token = defaults.string(forKey: "token"){
+        slider.setJSON(slider)
+        if defaults.string(forKey: "token") != nil{
            
             performSegue(withIdentifier: "WelcomeToView", sender: self)
         }
+        
     
     }
     override func viewWillAppear(_ animated: Bool) {

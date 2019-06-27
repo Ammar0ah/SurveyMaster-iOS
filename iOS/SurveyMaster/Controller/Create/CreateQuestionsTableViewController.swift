@@ -10,27 +10,15 @@ import UIKit
 
 class CreateQuestionsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
    
+    
     var pickerData : [String] = [String]()
-    var value = "text"
-    
-    
-    
-    @IBOutlet var surveyTitleTxt: UITextField!
-  
-    @IBOutlet var questionsTableView: UITableView!
-   
+    @IBOutlet var QuestionsTableView: UITableView!
     @IBOutlet var QTypesPickerView: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
     QTypesPickerView.dataSource = self
     QTypesPickerView.delegate = self
-          pickerData = Question.types
-        questionsTableView.dataSource = self
-        questionsTableView.delegate = self
-        questionsTableView.register(UINib(nibName: "TextTableViewCell", bundle: nil), forCellReuseIdentifier: "textCell")
-          questionsTableView.register(UINib(nibName: "SliderTableViewCell", bundle: nil), forCellReuseIdentifier: "sliderCell")
-        questionsTableView.rowHeight = UITableView.automaticDimension
-        questionsTableView.estimatedRowHeight = 200
+          pickerData = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"]
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -38,18 +26,7 @@ class CreateQuestionsViewController: UIViewController,UITableViewDataSource,UITa
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    @IBAction func AddBtn(_ sender: UIButton) {
-        pickerData.append(value)
-      
-        print(value)
-       questionsTableView.reloadData()
-      
-      
-    }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.view.layoutIfNeeded()
-    }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -58,35 +35,14 @@ class CreateQuestionsViewController: UIViewController,UITableViewDataSource,UITa
         return pickerData.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-       value = pickerData[row]
-    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pickerData.count
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        value = pickerData[indexPath.row]
-        print(pickerData)
-        if(value == "short text"){
-            
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "textCell", for: indexPath)
-                as! TextTableViewCell
-             cell.selectionStyle =  UITableViewCell.SelectionStyle.none
-            return cell
-        }
-        if (value == "slider"){
-            let cell = tableView.dequeueReusableCell(withIdentifier: "sliderCell", for: indexPath)
-                as! SliderTableViewCell
-             cell.selectionStyle =  UITableViewCell.SelectionStyle.none
-            return cell
-        }
-        return UITableViewCell(style: .default, reuseIdentifier: "textCell")
-       
+        let cell = tableView.dequeueReusableCell(withIdentifier: "sliderCell", for: indexPath)
+                    as! SliderTableViewCell
+        return cell
     }
     // MARK: - Table view data source
 
@@ -147,8 +103,4 @@ class CreateQuestionsViewController: UIViewController,UITableViewDataSource,UITa
     }
     */
 
-}
-
-extension CreateTableViewController : UIPickerViewDelegate {
-    
 }

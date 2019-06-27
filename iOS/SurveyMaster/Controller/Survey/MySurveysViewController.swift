@@ -21,9 +21,7 @@ class MySurveysViewControl: UITableViewController {
         super.viewDidLoad()
         validatingSession()
 //
-     tableView.register(UINib(nibName:"SurveyItemTableViewCell" , bundle: nil), forCellReuseIdentifier: "SurveyItemViewCell")
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 200
+        setupTableViewCell()
         // Do any additional setup after loading the view.
     }
     
@@ -31,7 +29,7 @@ class MySurveysViewControl: UITableViewController {
         let header = [
             "x-auth-token" : defaults.string(forKey: "token")
         ]
-        Alamofire.request(ShowSurveysURL, method: .get,parameters: nil, encoding: JSONEncoding.default, headers: header as! HTTPHeaders)
+        Alamofire.request(ShowSurveysURL, method: .get,parameters: nil, encoding: JSONEncoding.default, headers: header as? HTTPHeaders)
             .responseJSON{
                 response in
                 print(response)
@@ -62,9 +60,10 @@ class MySurveysViewControl: UITableViewController {
      
         return surveys.count
     }
+    //MARK:- configuring json
     func updateSurveyObject(data: [JSON]){
         for item in data{
-          var survey = Survey()
+            let survey = Survey()
             survey.title = item["title"].stringValue
            // survey.description = item["description"].stringValue
             survey.description = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
@@ -88,5 +87,12 @@ class MySurveysViewControl: UITableViewController {
         cell.colorView.backgroundColor = UIColor.randomFlat()
         cell.descriptionLabel.text = mysurvey.description
         return cell
+    }
+    
+    // MARK :- Setup table view
+    func setupTableViewCell(){
+        tableView.register(UINib(nibName:"SurveyItemTableViewCell" , bundle: nil), forCellReuseIdentifier: "SurveyItemViewCell")
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 200
     }
 }

@@ -7,10 +7,15 @@
 //
 
 import Foundation
-struct Survey {
+import UIKit
+import SwiftyJSON
+public class Survey {
     var title : String?
     var date : Int?
     var description : String?
     var link : String?
+    public func setInfo(_ cell: UITableViewCell){
+        
+    }
     
 }
