@@ -7,14 +7,38 @@
 //
 
 import UIKit
-
+import Alamofire
+import Wrap
+import SwiftyJSON
 class ViewController: UIViewController {
     let defaults = UserDefaults.standard
-    let slider = SliderQuestion("title","desc")
+   
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+       
+    }
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        slider.setJSON(slider)
+       // let content = SliderQuestion.Content(0,10)
+//        var slider = SliderQuestion("hey","hho")
+//
+//
+//
+//        let question = CreatItem(tit le: "First Fuckin Survey",pages: [QuestionsArray(questions: [Questions(title: "First Fuckin Title", type: "QUESTION_SLIDER", content: Content(min: 10, max: 20))])])
+//        do{
+//            var wrapper = try wrap(slider)
+//            print(JSON(wrapper))
+//
+//        }
+//        catch{
+//
+//        }
+   //      let slider = SliderQuestion("MyTitle","Mydesc")
+//         slider.content = content
+//    
+//        Question.Questions.append(slider)
+//        slider.postData()
         if defaults.string(forKey: "token") != nil{
            
             performSegue(withIdentifier: "WelcomeToView", sender: self)
@@ -27,5 +51,25 @@ class ViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
-}
 
+func post(data: JSON)
+{
+    let header = [
+        "x-auth-token" : defaults.string(forKey: "token")
+    ]
+    
+    Alamofire.request(PostURL, method: .post, parameters:data.dictionaryObject, encoding: JSONEncoding.default , headers: header as? HTTPHeaders)
+        .responseJSON{
+            response in
+            if response.result.isSuccess{
+                print("SUCCESS")
+                print(response)
+            }
+            else {
+                print(response.result)
+            }
+            
+    }
+   
+}
+}

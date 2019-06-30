@@ -8,7 +8,7 @@
 
 import Foundation
 public class RangeQuestion : Question {
-    var type : String?
+  
     var content = Content()
      struct Content {
         var min : Int?
@@ -19,8 +19,12 @@ public class RangeQuestion : Question {
         var maxDefaultValue : Int?
         var step : Int?
     }
-    override init(_ title : String , _ description : String) {
-        super.init(title, description)
+//    override init(_ title : String , _ description : String) {
+//        super.init(title, description)
+//    }
+    
+    required init(from decoder: Decoder) throws {
+        fatalError("init(from:) has not been implemented")
     }
     func setInfo(cell: Any) {
         

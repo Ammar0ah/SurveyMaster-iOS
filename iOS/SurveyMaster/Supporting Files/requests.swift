@@ -8,7 +8,8 @@
 
 import Foundation
 
-let URL = "http://192.168.1.3:5000/"
+let URL = "https://survey-master-server.herokuapp.com/"
 let RegistationURL = URL + "api/users"
 let LoginURL = URL + "api/auth"
 let ShowSurveysURL = URL + "api/surveys"
+let PostURL = URL + "api/surveys"

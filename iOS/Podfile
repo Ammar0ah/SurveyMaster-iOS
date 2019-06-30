@@ -8,7 +8,9 @@ target 'SurveyMaster' do
     pod 'SwiftyJSON'
     pod 'Alamofire'
     pod 'SVProgressHUD'
-    pod "GSMessages"
+    pod 'GSMessages'
     pod 'ChameleonFramework'
     pod 'SwiftMoment'
+    pod 'Wrap'
+ 
 end

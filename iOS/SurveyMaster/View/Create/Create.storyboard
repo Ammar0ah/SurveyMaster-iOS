@@ -36,7 +36,7 @@
                     <navigationItem key="navigationItem" title="Create Surveys" id="cUH-NH-5zl">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="abR-1p-58W">
                             <connections>
-                                <segue destination="kuQ-3q-13a" kind="show" id="zo5-7g-aY4"/>
+                                <segue destination="kuQ-3q-13a" kind="show" identifier="Create" id="zo5-7g-aY4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -54,14 +54,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cqx-Ad-hH7">
-                                <rect key="frame" x="0.0" y="205" width="414" height="517"/>
+                                <rect key="frame" x="0.0" y="205" width="414" height="468"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kxj-S3-HOC" userLabel="Title view">
                                 <rect key="frame" x="0.0" y="140" width="414" height="60"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e0w-b9-Vc8">
-                                        <rect key="frame" x="86" y="10" width="300" height="40"/>
+                                        <rect key="frame" x="181" y="10" width="300" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="IYY-Uc-kO8"/>
                                             <constraint firstAttribute="height" constant="40" id="Udj-B5-Hod"/>
@@ -70,8 +70,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulg-sz-WTs">
-                                        <rect key="frame" x="20" y="10" width="56" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Survey Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulg-sz-WTs">
+                                        <rect key="frame" x="20" y="10" width="151" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -88,7 +88,7 @@
                                 </constraints>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pzc-lF-k1P">
-                                <rect key="frame" x="0.0" y="822" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="773" width="414" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="6ca-Vo-N4I"/>
                                 </constraints>
@@ -97,7 +97,7 @@
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LCb-Jc-Ndf">
                                             <rect key="frame" x="20" y="5" width="374" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button"/>
+                                            <state key="normal" title="Add"/>
                                             <connections>
                                                 <action selector="AddBtn:" destination="kuQ-3q-13a" eventType="touchUpInside" id="w9H-vw-S6c"/>
                                             </connections>
@@ -106,14 +106,14 @@
                                 </items>
                             </toolbar>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7R-fI-PXx">
-                                <rect key="frame" x="0.0" y="722" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="673" width="414" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Qdi-tL-jTF"/>
                                 </constraints>
                             </pickerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXb-Kl-g8L">
                                 <rect key="frame" x="0.0" y="200" width="414" height="5"/>
-                                <color key="backgroundColor" red="0.51784205436706543" green="0.58159953355789185" blue="0.58617168664932251" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.66902792453765869" green="0.73128575086593628" blue="0.94889926910400391" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="5" id="Ix9-se-LgF"/>
                                 </constraints>
@@ -146,6 +146,15 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Create Surveys" id="hbZ-11-EGj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="FvE-kz-eT6">
+                            <connections>
+                                <action selector="DoneBtn:" destination="kuQ-3q-13a" id="aM9-06-DLr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="QTypesPickerView" destination="l7R-fI-PXx" id="02P-cX-ruY"/>
                         <outlet property="questionsTableView" destination="Cqx-Ad-hH7" id="VaD-ek-bPD"/>

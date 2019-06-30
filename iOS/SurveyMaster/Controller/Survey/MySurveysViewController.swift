@@ -32,7 +32,7 @@ class MySurveysViewControl: UITableViewController {
         Alamofire.request(ShowSurveysURL, method: .get,parameters: nil, encoding: JSONEncoding.default, headers: header as? HTTPHeaders)
             .responseJSON{
                 response in
-                print(response)
+             //   print(response)
                 if response.result.isSuccess{
                     if let response = response.result.value {
                         let data = JSON(response).arrayValue

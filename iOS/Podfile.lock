@@ -7,6 +7,7 @@ PODS:
   - SVProgressHUD (2.2.5)
   - SwiftMoment (0.7)
   - SwiftyJSON (5.0.0)
+  - Wrap (3.0.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - SVProgressHUD
   - SwiftMoment
   - SwiftyJSON
+  - Wrap
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -24,6 +26,7 @@ SPEC REPOS:
     - SVProgressHUD
     - SwiftMoment
     - SwiftyJSON
+    - Wrap
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
@@ -32,7 +35,8 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftMoment: dc6dd27012e267819104cbb03f74ff9192dd0b42
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  Wrap: 918fdb5157e4f701f9503b2633752d6f94616f84
 
-PODFILE CHECKSUM: b5a2be27e1ffcb3f19d3f7945c8092667d37180d
+PODFILE CHECKSUM: bbf3d6ec132da046e02bda6ffa29220552885764
 
 COCOAPODS: 1.6.1

@@ -8,34 +8,33 @@
 
 import Foundation
 import SwiftyJSON
+import Wrap
+
 class SliderQuestion : Question {
-    var content = Content()
-    struct Content {
-        var min : Int?
-        var max : Int?
-        var minLabel : String?
-        var maxLabel : String?
-        var defaultValue : Int?
-        var step : Int?
-    }
-    override init(_ title: String, _ desc: String) {
-        super.init(title, desc)
-    }
-    func setValues(_ cell : SliderTableViewCell){
-        content.min  = Int(cell.min ?? 0)
-        content.max = Int(cell.max ?? 10)
-        
-        
-    }
-    func setJSON(_ slider: SliderQuestion){
-        
-        slider.content.min = 5
-        slider.content.max = 6
-        slider.content.defaultValue = 0
-        print(JSON(slider))
- 
+    var content = Content (min:4,max:10,minLabel: "min",maxLabel: "max", defaultValue: 5,step:3)
+    override init(_ title: String, _ type: String) {
+       super.init(title, type)
     }
 }
 
 
-
+struct Questions {
+    var title : String
+    var type : String
+    var content : Content
+}
+struct Content{
+    var min : Int
+    var max : Int
+    var minLabel : String
+    var maxLabel : String
+    var defaultValue : Int
+    var step : Int
+}
+struct CreatItem {
+    var title : String
+    var pages : [QuestionsArray]
+}
+struct QuestionsArray {
+    var questions : [Questions]
+}

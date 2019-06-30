@@ -10,16 +10,14 @@ import Foundation
 import SwiftyJSON
 
 public class Question {
-    static var types : [String] {
-        get {return ["short text", "slider"]}
-    }
-    static var Questions : [Question] = []
-    static var QuestionsJSON : [JSON] = []
-    var title : String?
-    var description: String?
-    init(_ title: String , _ desc: String) {
+     var types : [String]
+    var title : String
+    var type: String
+    static var questions : [Question] = []
+    init(_ title: String , _ type: String) {
         self.title = title
-        self.description = desc
+        self.type = type
+        self.types = ["short text", "slider"]
     }
-    
+
 }
