@@ -39,7 +39,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Question Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zQO-wq-vQp">
+                            <textField opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Question Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zQO-wq-vQp">
                                 <rect key="frame" x="0.0" y="23" width="386" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="eG3-2W-36x"/>
@@ -47,6 +47,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="txtChanged:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="STd-Na-xbc"/>
+                                </connections>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="v4U-Lb-XkI">
                                 <rect key="frame" x="0.0" y="66" width="386" height="30"/>
@@ -69,7 +72,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <connections>
                                             <action selector="txtChanged:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="J93-2S-Qhp"/>
                                         </connections>
@@ -88,7 +91,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <connections>
                                             <action selector="txtChanged:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="a4N-yz-7O2"/>
                                         </connections>
@@ -156,13 +159,13 @@
                         </constraints>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
+                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         <connections>
                             <action selector="txtChanged:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="LaM-yc-L1U"/>
                         </connections>
                     </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Default value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQZ-9D-71C">
-                        <rect key="frame" x="190.5" y="161.5" width="108.5" height="20.5"/>
+                        <rect key="frame" x="190.5" y="161.5" width="100" height="20.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="36" id="J0M-i5-fJf"/>
                         </constraints>
@@ -176,13 +179,13 @@
                         </variation>
                     </label>
                     <textField opaque="NO" tag="5" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k7F-zS-UGj">
-                        <rect key="frame" x="309" y="156" width="97" height="30"/>
+                        <rect key="frame" x="300.5" y="156" width="97" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="97" id="CQI-39-XMN"/>
                         </constraints>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
+                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         <connections>
                             <action selector="txtChanged:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="SQw-KH-jIB"/>
                         </connections>
@@ -226,12 +229,13 @@
                     <constraint firstItem="sQZ-9D-71C" firstAttribute="leading" secondItem="f2X-fB-E5O" secondAttribute="trailing" constant="33" id="jAF-zZ-rvH"/>
                     <constraint firstItem="f2X-fB-E5O" firstAttribute="leading" secondItem="CxI-JW-KqQ" secondAttribute="trailing" constant="15" id="ksa-sR-y2g"/>
                     <constraint firstItem="dGs-wm-jZc" firstAttribute="top" secondItem="vFe-VS-ev8" secondAttribute="bottom" constant="10" id="vz3-0R-nhG"/>
-                    <constraint firstAttribute="trailing" secondItem="k7F-zS-UGj" secondAttribute="trailing" id="xQV-Kd-UGc"/>
                     <constraint firstItem="vFe-VS-ev8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="zAe-YP-cZW"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="QuestionTxt" destination="zQO-wq-vQp" id="PWs-gy-UsK"/>
+                <outlet property="QuestionTypeLabel" destination="Cgk-at-fa3" id="Eq4-cJ-7A2"/>
                 <outlet property="defaultValTxt" destination="k7F-zS-UGj" id="2tO-fO-RYH"/>
                 <outlet property="maxLabelTxt" destination="dGs-wm-jZc" id="9Qy-5X-cEo"/>
                 <outlet property="maxTxt" destination="Esf-hX-Spt" id="S6d-As-rw9"/>

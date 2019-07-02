@@ -12,7 +12,7 @@ class SliderTableViewCell: UITableViewCell {
     
     
     @IBOutlet var toggle: UISwitch!
-    var slider : SliderQuestion = SliderQuestion("title", "slider")
+    var slider : SliderQuestion = SliderQuestion("", "")
     var returnValue :((_ value: SliderQuestion)->())?
    @IBOutlet  var maxTxt: UITextField!
     @IBOutlet var minTxt: UITextField!
@@ -21,6 +21,8 @@ class SliderTableViewCell: UITableViewCell {
     @IBOutlet var stepTxt: UITextField!
     @IBOutlet var defaultValTxt: UITextField!
   
+    @IBOutlet var QuestionTypeLabel: UILabel!
+    @IBOutlet var QuestionTxt: UITextField!
     override func awakeFromNib() {
         super.awakeFromNib()
         minLabelTxt.delegate = self
@@ -29,6 +31,7 @@ class SliderTableViewCell: UITableViewCell {
         maxTxt.delegate = self
         minTxt.delegate = self
         defaultValTxt.delegate = self
+        QuestionTxt.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -39,6 +42,8 @@ class SliderTableViewCell: UITableViewCell {
     
     @IBAction func txtChanged(_ sender: UITextField) {
         switch(sender.tag){
+        case -1:
+            slider.title = QuestionTxt.text ?? "no title"
         case 0 :
             slider.content.min = Int(maxTxt.text!) ?? 0
             break
@@ -56,17 +61,33 @@ class SliderTableViewCell: UITableViewCell {
              slider.content.step = Int(stepTxt.text!) ?? 1
             break
         case 5:
-            slider.content.defaultValue = Int(defaultValTxt.text!) ?? 5
+            if QuestionTypeLabel.text! == "Range Question"{
+                 break
+            }
+            else {
+                 slider.content.defaultValue = Int(defaultValTxt.text!) ?? 5
+            }
+           
             break
         default: return
         }
+             returnValue?(slider)
+    }
+    override func prepareForReuse() {
+        self.defaultValTxt.text! = ""
+        self.minLabelTxt.text! = ""
+        self.maxLabelTxt.text! = ""
+        self.maxTxt.text! = ""
+        self.minTxt.text! = ""
+        self.stepTxt.text! = ""
+        self.QuestionTxt.text! = ""
     }
 }
 
 extension SliderTableViewCell : UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        returnValue?(slider)
-         //print( slider.content.minLabel)
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        return false
     }
-
 }

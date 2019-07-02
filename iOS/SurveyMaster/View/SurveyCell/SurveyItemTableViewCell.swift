@@ -24,6 +24,7 @@ class SurveyItemTableViewCell: UITableViewCell {
         super.awakeFromNib()
        
         ContentView.layer.cornerRadius = 10
+        colorView.layer.cornerRadius = 8
         // Initialization code
     }
 
@@ -32,5 +33,6 @@ class SurveyItemTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
     
 }

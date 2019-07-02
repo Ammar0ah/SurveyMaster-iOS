@@ -20,9 +20,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lR3-EQ-BzO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="74.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="77.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8E-vR-tLy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Text Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8E-vR-tLy">
                                 <rect key="frame" x="10" y="10.5" width="310" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="y7s-4Z-OGS"/>
@@ -49,7 +49,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="trE-CO-PJd">
-                                <rect key="frame" x="0.0" y="72.5" width="320" height="2"/>
+                                <rect key="frame" x="0.0" y="75.5" width="320" height="2"/>
                                 <color key="backgroundColor" red="0.68888300660000001" green="0.71366006140000005" blue="0.73448425530000006" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2" id="ZsU-mZ-Udl"/>
@@ -63,7 +63,7 @@
                             <constraint firstItem="trE-CO-PJd" firstAttribute="leading" secondItem="lR3-EQ-BzO" secondAttribute="leading" id="RdI-TL-HE6"/>
                             <constraint firstItem="i8E-vR-tLy" firstAttribute="top" secondItem="lR3-EQ-BzO" secondAttribute="top" constant="10" id="gxC-Ya-fjg"/>
                             <constraint firstAttribute="trailing" secondItem="trE-CO-PJd" secondAttribute="trailing" id="nOk-eb-V4g"/>
-                            <constraint firstItem="trE-CO-PJd" firstAttribute="top" secondItem="4Ka-km-zvq" secondAttribute="bottom" constant="2" id="u4H-uT-5U5"/>
+                            <constraint firstItem="trE-CO-PJd" firstAttribute="top" secondItem="4Ka-km-zvq" secondAttribute="bottom" constant="5" id="u4H-uT-5U5"/>
                         </constraints>
                     </stackView>
                 </subviews>
@@ -76,6 +76,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="QuestionTypeLabel" destination="i8E-vR-tLy" id="Tk8-ad-0c6"/>
                 <outlet property="questionTitleTxt" destination="KKL-kJ-MKF" id="FsT-dB-m5c"/>
             </connections>
             <point key="canvasLocation" x="155.07246376811597" y="89.732142857142847"/>

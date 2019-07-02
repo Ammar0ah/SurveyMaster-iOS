@@ -17,13 +17,16 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTxt: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailTxt.text = "ammar@helali.com"
-        passwordTxt.text = "123123123"
+        emailTxt.text = "admintest1234@gmail.com"
+        passwordTxt.text = "justfortest1234"
 
       
     }
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: true)
+        super.viewWillAppear(animated)
+          navigationController?.setNavigationBarHidden(false, animated: true)
+//        self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#553c8b")
+//        self.navigationController?.navigationBar.tintColor = UIColor(hexString: "#ffeafe")
     }
 
   
@@ -44,6 +47,7 @@ class LoginViewController: UIViewController {
                         SVProgressHUD.dismiss(withDelay: 1.5)
                     }
                     else if let response = response.result.value {
+                        print("logged in")
                         self.defaults.set(response, forKey: "token")
                         self.performSegue(withIdentifier: "LoginToView", sender: self)
                     }

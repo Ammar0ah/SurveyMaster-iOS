@@ -20,12 +20,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-       // let content = SliderQuestion.Content(0,10)
+//    //    let content = SliderQuestion.content(0,10)
 //        var slider = SliderQuestion("hey","hho")
 //
 //
 //
-//        let question = CreatItem(tit le: "First Fuckin Survey",pages: [QuestionsArray(questions: [Questions(title: "First Fuckin Title", type: "QUESTION_SLIDER", content: Content(min: 10, max: 20))])])
+//        let question = CreateItem(title: "First Fuckin Survey",pages: [QuestionsArray(questions: [Questions(title: "First Fuckin Title", type: "QUESTION_SLIDER", content: Content())])])
 //        do{
 //            var wrapper = try wrap(slider)
 //            print(JSON(wrapper))

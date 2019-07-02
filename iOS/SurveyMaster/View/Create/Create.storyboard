@@ -61,9 +61,9 @@
                                 <rect key="frame" x="0.0" y="140" width="414" height="60"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e0w-b9-Vc8">
-                                        <rect key="frame" x="181" y="10" width="300" height="40"/>
+                                        <rect key="frame" x="181" y="10" width="200" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="IYY-Uc-kO8"/>
+                                            <constraint firstAttribute="width" constant="200" id="IYY-Uc-kO8"/>
                                             <constraint firstAttribute="height" constant="40" id="Udj-B5-Hod"/>
                                         </constraints>
                                         <nil key="textColor"/>
@@ -159,6 +159,7 @@
                         <outlet property="QTypesPickerView" destination="l7R-fI-PXx" id="02P-cX-ruY"/>
                         <outlet property="questionsTableView" destination="Cqx-Ad-hH7" id="VaD-ek-bPD"/>
                         <outlet property="surveyTitleTxt" destination="e0w-b9-Vc8" id="FPl-oi-jud"/>
+                        <outlet property="titleTxt" destination="e0w-b9-Vc8" id="gCU-yL-asn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D9T-AF-CvE" userLabel="First Responder" sceneMemberID="firstResponder"/>
