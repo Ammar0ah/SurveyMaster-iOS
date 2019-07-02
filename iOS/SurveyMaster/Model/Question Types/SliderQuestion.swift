@@ -7,34 +7,12 @@
 //
 
 import Foundation
-import SwiftyJSON
-import Wrap
+
 
 class SliderQuestion : Question {
-    var content = Content (min:4,max:10,minLabel: "min",maxLabel: "max", defaultValue: 5,step:3)
+  //var content = Content()
     override init(_ title: String, _ type: String) {
        super.init(title, type)
     }
 }
 
-
-struct Questions {
-    var title : String
-    var type : String
-    var content : Content
-}
-struct Content{
-    var min : Int
-    var max : Int
-    var minLabel : String
-    var maxLabel : String
-    var defaultValue : Int
-    var step : Int
-}
-struct CreatItem {
-    var title : String
-    var pages : [QuestionsArray]
-}
-struct QuestionsArray {
-    var questions : [Questions]
-}
