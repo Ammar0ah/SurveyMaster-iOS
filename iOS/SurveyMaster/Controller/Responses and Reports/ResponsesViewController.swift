@@ -13,6 +13,7 @@ import SwiftMoment
 class ResponsesViewController: UIViewController {
     
     var Sid : String = "ss"
+    var SName : String = ""
     var jsonList : [JSON] = []
     var responses : [Response] = []
     
@@ -26,8 +27,9 @@ class ResponsesViewController: UIViewController {
         responsesTableview.dataSource = self
         responsesTableview.estimatedRowHeight = UITableView.automaticDimension
         responsesTableview.estimatedRowHeight = 100
-       
-        Alamofire.request(ShowSurveysURL + "/\(Sid)" + "/responses", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header as? HTTPHeaders).responseJSON{
+        let group = DispatchGroup()
+        group.enter()
+        Alamofire.request(ShowSurveysURL + "/\(Sid)" + "/responses/", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header as? HTTPHeaders).responseJSON{
             response in
            
             if response.result.isSuccess {
@@ -35,6 +37,7 @@ class ResponsesViewController: UIViewController {
                     self.jsonList = JSON(response).arrayValue
                     print(self.jsonList)
                     self.configureResponses(data: self.jsonList)
+                    group.leave()
                 }
               
             }
@@ -45,11 +48,11 @@ class ResponsesViewController: UIViewController {
         for item in data {
             let response = Response()
             response.date = item["date"].intValue
-            response.surveyId = item["surveyId"].intValue
-            response.responseId = item["_id"].intValue
+            response.surveyId = item["surveyId"].stringValue
+            response.responseId = item["_id"].stringValue
             responses.append(response)
             responsesTableview.reloadData()
-            print(response.date)
+            print(response.surveyId)
         }
     }
     
@@ -70,20 +73,26 @@ extension ResponsesViewController : UITableViewDelegate, UITableViewDataSource {
         print("count",responses.count)
         return responses.count
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        print(responses[indexPath.row].date)
-    }
-
+ 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
          let date = moment(responses[indexPath.row].date)
          let dateString = " \(date.day)-\(date.month)-\(date.year)"
-        cell.textLabel?.text! = String(responses[indexPath.row].responseId)
+        cell.textLabel?.text! = "Response: \(indexPath.row + 1)"
         cell.detailTextLabel?.text! = dateString
         
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let VC = storyboard?.instantiateViewController(withIdentifier: "ReportsViewController") as? ReportsViewController else {return}
+        
+        print("survey id", responses[indexPath.row].surveyId)
+         VC.Sid = responses[indexPath.row].surveyId
+         //VC.R_id = responses[indexPath.row].responseId
+        self.navigationController?.pushViewController(VC, animated: true)
+       
+        
     }
 
 

@@ -3,8 +3,12 @@ PODS:
   - ChameleonFramework (2.1.0):
     - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
+  - Charts (3.3.0):
+    - Charts/Core (= 3.3.0)
+  - Charts/Core (3.3.0)
   - GSMessages (1.7.2)
   - SVProgressHUD (2.2.5)
+  - SwiftHTTP (3.0.1)
   - SwiftMoment (0.7)
   - SwiftyJSON (5.0.0)
   - Wrap (3.0.0)
@@ -12,8 +16,10 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - ChameleonFramework
+  - Charts
   - GSMessages
   - SVProgressHUD
+  - SwiftHTTP
   - SwiftMoment
   - SwiftyJSON
   - Wrap
@@ -22,8 +28,10 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - ChameleonFramework
+    - Charts
     - GSMessages
     - SVProgressHUD
+    - SwiftHTTP
     - SwiftMoment
     - SwiftyJSON
     - Wrap
@@ -31,12 +39,14 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Charts: ec1f57f9340054155691e84d4544a1d239d382c5
   GSMessages: 05bedc25bd278a1bf4260d6de526de0fc84cfef7
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftHTTP: e94f1aa8cde58637dcc0100f6349de31a3337fde
   SwiftMoment: dc6dd27012e267819104cbb03f74ff9192dd0b42
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Wrap: 918fdb5157e4f701f9503b2633752d6f94616f84
 
-PODFILE CHECKSUM: bbf3d6ec132da046e02bda6ffa29220552885764
+PODFILE CHECKSUM: d225ab944a975cac0f8cfa76453e57878c0d9400
 
 COCOAPODS: 1.6.1

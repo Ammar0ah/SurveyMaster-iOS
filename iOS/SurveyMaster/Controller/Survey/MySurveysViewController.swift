@@ -31,7 +31,7 @@ class MySurveysViewControl: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorStyle = .none
-        validatingSession()
+        validatingSession(loader: true)
         //self.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.refreshControl = refresher
 
@@ -40,15 +40,23 @@ class MySurveysViewControl: UITableViewController {
     }
     
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+         self.navigationController?.navigationBar.prefersLargeTitles = true
+        super.viewWillAppear(animated)
+    }
     @objc func refresh(){
        // refreshControl?.beginRefreshing()
-        validatingSession()
+        validatingSession(loader:false)
         //tableView.reloadData()
         refreshControl?.endRefreshing()
     }
-     func validatingSession() {
-       SVProgressHUD.show(withStatus: "Fetching data...")
+    func validatingSession(loader: Bool) {
+        if loader {
+             SVProgressHUD.show(withStatus: "Fetching data...")
+        }
+        let group = DispatchGroup()
+        group.enter()
+      
         Alamofire.request(ShowSurveysURL, method: .get,parameters: nil, encoding: JSONEncoding.default, headers: header as? HTTPHeaders)
             .responseJSON{
                 response in
@@ -60,6 +68,7 @@ class MySurveysViewControl: UITableViewController {
                         self.updateSurveyObject(data:data)
                         SVProgressHUD.dismiss()
                        // print("response" ,response)
+                  
                     }
                     
                 }
@@ -68,6 +77,7 @@ class MySurveysViewControl: UITableViewController {
                     print(response)
                     self.showMessage("Error happenend check your connection", type: .error)
                 }
+                      group.leave()
 
             
         }
@@ -131,15 +141,19 @@ class MySurveysViewControl: UITableViewController {
     
     
     
-    // MARK :- did select row at
+    // MARK:- did select row at
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //    self.performSegue(withIdentifier: "responsesSegue", sender: self)
 //        tableView.deselectRow(at: indexPath, animated: true)
          let vc = storyboard?.instantiateViewController(withIdentifier: "ResponsesViewController") as? ResponsesViewController
         vc?.Sid = surveys[indexPath.row].id!
+        vc?.SName = surveys[indexPath.row].title!
         self.navigationController?.pushViewController(vc!, animated: true)
         
     }
+    
+    
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let alert = UIAlertController(title: "Deleting Survey", message: "there's no step back, are you sure?", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
@@ -155,7 +169,7 @@ class MySurveysViewControl: UITableViewController {
             self.surveys.reverse()
             //print(reversedSurveys[indexPath.row].id!)
             self.surveys.remove(at: indexPath.row )
-            self.validatingSession()
+            self.validatingSession(loader : false)
         }))
         self.present(alert,animated: true)
      

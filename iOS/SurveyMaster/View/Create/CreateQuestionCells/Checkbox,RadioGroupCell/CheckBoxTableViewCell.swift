@@ -33,6 +33,7 @@ class CheckBoxTableViewCell: UITableViewCell {
         choice1.delegate = self
         choice2.delegate = self
         choice3.delegate = self
+        QuestionTitleText.delegate = self
         check.content = Content(choices:[])
     
     }
@@ -42,12 +43,29 @@ class CheckBoxTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func txtChanged(_ sender: UITextField) {
+        if check.content.choices!.count > 0 {
+            
+       
+        if sender.tag == 0 {
+        check.content.choices?[0] = choice1.text!
+        }
+        if sender.tag == 1 {
+            check.content.choices?[1] = choice2.text!
+        }
+        if sender.tag == 2 {
+            check.content.choices?[2] =
+            choice3.text!
+        }
+             }
+        else {check.content.choices?.append(sender.text!)}
+    }
     
 }
 extension CheckBoxTableViewCell : UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         check.title = textField.text!;
-        check.content.choices?.append(textField.text ?? "No text")
+
         returnValue?(check)
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

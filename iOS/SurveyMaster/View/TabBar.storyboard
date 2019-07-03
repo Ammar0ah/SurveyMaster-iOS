@@ -15,7 +15,7 @@
             <objects>
                 <tableViewController id="yvw-kC-wqu" customClass="MySurveysViewControl" customModule="SurveyMaster" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Rx7-PK-OHr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.12637259066104889" green="0.12639245390892029" blue="0.12636536359786987" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
@@ -64,7 +64,7 @@
             <objects>
                 <viewController storyboardIdentifier="ResponsesViewController" id="yYv-aB-f4Z" customClass="ResponsesViewController" customModule="SurveyMaster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qpd-dv-XWs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VsQ-MQ-NOD">
@@ -109,30 +109,30 @@
                     </view>
                     <connections>
                         <outlet property="responsesTableview" destination="VsQ-MQ-NOD" id="CpD-1P-MEU"/>
-                        <segue destination="ntC-pj-Ohp" kind="show" id="tjq-Lr-DTb"/>
+                        <segue destination="p2R-L8-qVX" kind="show" identifier="reportsSegue" id="dxz-u2-a0N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Q5-fx-548" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5557.971014492754" y="217.63392857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Responses Reports View Controller-->
         <scene sceneID="asB-Xg-pVe">
             <objects>
-                <viewController id="ntC-pj-Ohp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResponsesReportsViewController" id="ntC-pj-Ohp" customClass="ResponsesReportsViewController" customModule="SurveyMaster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uvj-N3-uKW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gqy-bC-3vs">
-                                <rect key="frame" x="127" y="150" width="160" height="29"/>
+                                <rect key="frame" x="127" y="54" width="160" height="29"/>
                                 <segments>
                                     <segment title="Responses"/>
                                     <segment title="Reports"/>
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rm1-bZ-bSM">
-                                <rect key="frame" x="0.0" y="183" width="414" height="630"/>
+                                <rect key="frame" x="0.0" y="87" width="414" height="775"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -148,20 +148,92 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IR6-5F-Dd1"/>
                     </view>
+                    <connections>
+                        <outlet property="ResRepTableView" destination="rm1-bZ-bSM" id="QPT-no-Hnr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QoA-En-yCO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6540.579710144928" y="217.63392857142856"/>
+            <point key="canvasLocation" x="6570" y="-172"/>
+        </scene>
+        <!--Reports View Controller-->
+        <scene sceneID="ems-ub-H4V">
+            <objects>
+                <viewController storyboardIdentifier="ReportsViewController" id="p2R-L8-qVX" customClass="ReportsViewController" customModule="SurveyMaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gDs-An-CX9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="10N-a4-1zA">
+                                <rect key="frame" x="0.0" y="190" width="414" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0l7-Aj-xZ3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJo-eV-KZr">
+                                <rect key="frame" x="332" y="733" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextBtn:" destination="p2R-L8-qVX" eventType="touchUpInside" id="Xar-FW-y5e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MoS-VF-Gam">
+                                <rect key="frame" x="50" y="733" width="59" height="30"/>
+                                <state key="normal" title="Previous"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgO-IE-6sP" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="235" width="414" height="493"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="10N-a4-1zA" firstAttribute="top" secondItem="LF5-MI-uKo" secondAttribute="top" constant="50" id="1Zg-1g-SUC"/>
+                            <constraint firstItem="MoS-VF-Gam" firstAttribute="leading" secondItem="LF5-MI-uKo" secondAttribute="leading" constant="50" id="2cR-d8-3cL"/>
+                            <constraint firstItem="LF5-MI-uKo" firstAttribute="trailing" secondItem="rgO-IE-6sP" secondAttribute="trailing" id="CYK-tH-MVr"/>
+                            <constraint firstItem="10N-a4-1zA" firstAttribute="leading" secondItem="LF5-MI-uKo" secondAttribute="leading" id="HxT-3G-Zuw"/>
+                            <constraint firstItem="LF5-MI-uKo" firstAttribute="bottom" secondItem="WJo-eV-KZr" secondAttribute="bottom" constant="50" id="Re3-1E-9eZ"/>
+                            <constraint firstItem="LF5-MI-uKo" firstAttribute="trailing" secondItem="10N-a4-1zA" secondAttribute="trailing" id="cWX-KB-xj2"/>
+                            <constraint firstItem="LF5-MI-uKo" firstAttribute="trailing" secondItem="WJo-eV-KZr" secondAttribute="trailing" constant="50" id="drb-bc-bj7"/>
+                            <constraint firstItem="rgO-IE-6sP" firstAttribute="top" secondItem="10N-a4-1zA" secondAttribute="bottom" constant="5" id="gi0-s0-spM"/>
+                            <constraint firstItem="rgO-IE-6sP" firstAttribute="leading" secondItem="LF5-MI-uKo" secondAttribute="leading" id="nMU-eG-qlo"/>
+                            <constraint firstItem="LF5-MI-uKo" firstAttribute="bottom" secondItem="MoS-VF-Gam" secondAttribute="bottom" constant="50" id="naU-gN-tpb"/>
+                            <constraint firstItem="MoS-VF-Gam" firstAttribute="top" secondItem="rgO-IE-6sP" secondAttribute="bottom" constant="5" id="nmI-rv-bPm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LF5-MI-uKo"/>
+                    </view>
+                    <connections>
+                        <outlet property="chartView" destination="rgO-IE-6sP" id="ctT-h8-6Ql"/>
+                        <outlet property="nextBtn" destination="WJo-eV-KZr" id="BDe-Sk-Hjb"/>
+                        <outlet property="previousBtn" destination="MoS-VF-Gam" id="qeH-s8-aT8"/>
+                        <outlet property="questionTitleLabel" destination="10N-a4-1zA" id="BLZ-qz-dab"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r7J-ZE-eQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6581" y="524"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tej-QS-W8Z">
             <objects>
                 <navigationController id="2Pv-tA-N7j" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="list" id="EMe-OS-sau"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="bfh-WD-bV5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="bfh-WD-bV5">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.33333333329999998" green="0.23529411759999999" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hco-0V-A4b">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="yvw-kC-wqu" kind="relationship" relationship="rootViewController" id="4O6-4f-b2d"/>
                     </connections>
@@ -175,10 +247,11 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="e40-ao-anA" customClass="tab" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ete-i6-doR">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" itemPositioning="centered" id="ete-i6-doR">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.33333333329999998" green="0.23529411759999999" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="2Pv-tA-N7j" kind="relationship" relationship="viewControllers" id="P12-Qw-DOQ"/>
@@ -217,7 +290,7 @@
             <objects>
                 <viewController id="9Kc-br-lNc" customClass="AccountViewController" customModule="SurveyMaster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j51-nC-jgY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unL-Si-zCQ">

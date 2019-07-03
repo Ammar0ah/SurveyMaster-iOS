@@ -7,10 +7,38 @@
 //
 
 import Foundation
-
+import SwiftyJSON
 
 class Response {
-    var responseId : Int = 0
-    var surveyId : Int = 0 
+    var responseId : String = ""
+    var surveyId : String = ""
     var date : Int = 0
+
+}
+
+struct ResponseContent {
+   var  valueString : String
+    
+    var choices : [String]
+    var title : String
+    var type : String
+    var isOpened : Bool
+    init() {
+        valueString = ""
+        choices = []
+        title = ""
+        type = ""
+        isOpened = false
+    }
+}
+
+struct Report {
+    var title : String
+    var content : [String : JSON]
+    var type : String
+    init() {
+        title = ""
+        content = [:]
+        type = "" 
+    }
 }
