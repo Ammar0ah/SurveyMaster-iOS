@@ -64,8 +64,9 @@ class MySurveysViewControl: UITableViewController {
                     
                 }
                 else{
+                    SVProgressHUD.dismiss()
                     print(response)
-                    self.showMessage("error Happenend check your connection", type: .error)
+                    self.showMessage("Error happenend check your connection", type: .error)
                 }
 
             
@@ -134,7 +135,7 @@ class MySurveysViewControl: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //    self.performSegue(withIdentifier: "responsesSegue", sender: self)
 //        tableView.deselectRow(at: indexPath, animated: true)
-         let vc = storyboard?.instantiateViewController(withIdentifier: "ResponseReportsViewController") as? ResponseReportsViewController
+         let vc = storyboard?.instantiateViewController(withIdentifier: "ResponsesViewController") as? ResponsesViewController
         vc?.Sid = surveys[indexPath.row].id!
         self.navigationController?.pushViewController(vc!, animated: true)
         

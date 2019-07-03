@@ -8,7 +8,7 @@
 
 import Foundation
 let defaults = UserDefaults.standard
-let URL =  "https://survey-master-server.herokuapp.com/"////"http://192.168.43.120:5000/"
+let URL = "http://192.168.1.5:5000/"//"https://survey-master-server.herokuapp.com/"
 let RegistationURL = URL + "api/users"
 let LoginURL = URL + "api/auth"
 let ShowSurveysURL = URL + "api/surveys"

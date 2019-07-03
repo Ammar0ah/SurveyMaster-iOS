@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SwiftMoment
-class ResponseReportsViewController: UIViewController {
+class ResponsesViewController: UIViewController {
     
     var Sid : String = "ss"
     var jsonList : [JSON] = []
@@ -65,7 +65,7 @@ class ResponseReportsViewController: UIViewController {
 
 }
 //
-extension ResponseReportsViewController : UITableViewDelegate, UITableViewDataSource {
+extension ResponsesViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("count",responses.count)
         return responses.count
@@ -80,7 +80,8 @@ extension ResponseReportsViewController : UITableViewDelegate, UITableViewDataSo
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
          let date = moment(responses[indexPath.row].date)
          let dateString = " \(date.day)-\(date.month)-\(date.year)"
-      //  cell.textLabel?.text! = responses[indexPath.row].
+        cell.textLabel?.text! = String(responses[indexPath.row].responseId)
+        cell.detailTextLabel?.text! = dateString
         
         return cell
     }

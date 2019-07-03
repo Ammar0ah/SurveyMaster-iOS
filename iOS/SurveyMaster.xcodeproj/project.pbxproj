@@ -33,6 +33,7 @@
 		ACDE83CC22CBF4FE0038A681 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDE83CB22CBF4FE0038A681 /* Response.swift */; };
 		ACDE83D122CC030A0038A681 /* ReportResponseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDE83CF22CC030A0038A681 /* ReportResponseTableViewCell.swift */; };
 		ACDE83D222CC030A0038A681 /* ReportResponseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACDE83D022CC030A0038A681 /* ReportResponseTableViewCell.xib */; };
+		ACE24DE122CC945A00A4F7D8 /* ResponsesReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE24DE022CC945A00A4F7D8 /* ResponsesReportsViewController.swift */; };
 		ACE5AAD022C9AF1600FCB58C /* CheckBoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5AACE22C9AF1600FCB58C /* CheckBoxTableViewCell.swift */; };
 		ACE5AAD122C9AF1600FCB58C /* CheckBoxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE5AACF22C9AF1600FCB58C /* CheckBoxTableViewCell.xib */; };
 		ACFE4E4A22A57C1F009409BD /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFE4E4922A57C1F009409BD /* TabBar.storyboard */; };
@@ -70,6 +71,7 @@
 		ACDE83CB22CBF4FE0038A681 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		ACDE83CF22CC030A0038A681 /* ReportResponseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportResponseTableViewCell.swift; sourceTree = "<group>"; };
 		ACDE83D022CC030A0038A681 /* ReportResponseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportResponseTableViewCell.xib; sourceTree = "<group>"; };
+		ACE24DE022CC945A00A4F7D8 /* ResponsesReportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsesReportsViewController.swift; sourceTree = "<group>"; };
 		ACE5AACE22C9AF1600FCB58C /* CheckBoxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxTableViewCell.swift; sourceTree = "<group>"; };
 		ACE5AACF22C9AF1600FCB58C /* CheckBoxTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckBoxTableViewCell.xib; sourceTree = "<group>"; };
 		ACFE4E4922A57C1F009409BD /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB1C85B22CBBC0E009F22A0 /* ResponseReportsViewController.swift */,
+				ACE24DE022CC945A00A4F7D8 /* ResponsesReportsViewController.swift */,
 			);
 			path = "Responses and Reports";
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				AC08813522A955FF008F0F61 /* CreateTableViewController.swift in Sources */,
 				AC97319722A26A3B00A78D8A /* ViewController.swift in Sources */,
 				ACDE83CC22CBF4FE0038A681 /* Response.swift in Sources */,
+				ACE24DE122CC945A00A4F7D8 /* ResponsesReportsViewController.swift in Sources */,
 				ACBE47D522C293F200E72BB1 /* SliderQuestion.swift in Sources */,
 				ACE5AAD022C9AF1600FCB58C /* CheckBoxTableViewCell.swift in Sources */,
 				AC06753C22A3205F00399E76 /* User.swift in Sources */,
