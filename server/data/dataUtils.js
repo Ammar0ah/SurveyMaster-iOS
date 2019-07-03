@@ -1,22 +1,26 @@
 const files = require('files')
-
+const sjcl = require('./sjcl.js');
+const { sjclKey } = require('../config');
 async function saveJson(path, object) {
   const dir = await files.dir(path)
-  //console.log(dir)
+  console.log(dir)
   await files.mkdir(dir)
-  const data = JSON.stringify(object)
+  const _data = JSON.stringify(object)
+  const data = sjcl.encrypt(sjclKey, _data);
   await files.write(path, data)
 }
 
 async function loadJson(path) {
   const dir = await files.dir(path)
-  if (!exists(path)) {
+  if (!await exists(path)) {
     await files.mkdir(dir)
     console.log('not found file and created:', path)
+    return;
   }
   let object
   try {
-    const data = await files.read(path)
+    const _data = await files.read(path)
+    const data = sjcl.decrypt(sjclKey, _data);
     if (data) object = await JSON.parse(data)
     else throw `${path} file has an error in loading data`
   } catch (e) {
