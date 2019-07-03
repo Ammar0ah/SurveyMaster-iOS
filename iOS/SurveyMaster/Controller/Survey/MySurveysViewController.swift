@@ -48,16 +48,17 @@ class MySurveysViewControl: UITableViewController {
         refreshControl?.endRefreshing()
     }
      func validatingSession() {
-      
+       SVProgressHUD.show(withStatus: "Fetching data...")
         Alamofire.request(ShowSurveysURL, method: .get,parameters: nil, encoding: JSONEncoding.default, headers: header as? HTTPHeaders)
             .responseJSON{
                 response in
-             //   print(response)
+               
                 if response.result.isSuccess{
                     if let response = response.result.value {
                         let data = JSON(response).arrayValue
                         
                         self.updateSurveyObject(data:data)
+                        SVProgressHUD.dismiss()
                        // print("response" ,response)
                     }
                     
@@ -131,8 +132,12 @@ class MySurveysViewControl: UITableViewController {
     
     // MARK :- did select row at
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    self.performSegue(withIdentifier: "responsesSegue", sender: self)
-        tableView.deselectRow(at: indexPath, animated: true)
+//    self.performSegue(withIdentifier: "responsesSegue", sender: self)
+//        tableView.deselectRow(at: indexPath, animated: true)
+         let vc = storyboard?.instantiateViewController(withIdentifier: "ResponseReportsViewController") as? ResponseReportsViewController
+        vc?.Sid = surveys[indexPath.row].id!
+        self.navigationController?.pushViewController(vc!, animated: true)
+        
     }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let alert = UIAlertController(title: "Deleting Survey", message: "there's no step back, are you sure?", preferredStyle: .actionSheet)
@@ -147,7 +152,7 @@ class MySurveysViewControl: UITableViewController {
             }
             self.deleteRequest(tableView: tableView, for: indexPath,surveys:reversedSurveys )
             self.surveys.reverse()
-            print(reversedSurveys[indexPath.row].id!)
+            //print(reversedSurveys[indexPath.row].id!)
             self.surveys.remove(at: indexPath.row )
             self.validatingSession()
         }))

@@ -28,9 +28,11 @@
 		AC9B004122A694E10067B02B /* SurveyItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9B003F22A694E00067B02B /* SurveyItemTableViewCell.xib */; };
 		AC9B004322A6A9210067B02B /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9B004222A6A9210067B02B /* Survey.swift */; };
 		ACB1C85D22CBBC0E009F22A0 /* ResponseReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB1C85B22CBBC0E009F22A0 /* ResponseReportsViewController.swift */; };
-		ACB1C85E22CBBC0E009F22A0 /* ResponseReportsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB1C85C22CBBC0E009F22A0 /* ResponseReportsCell.xib */; };
 		ACBE47D022C2849C00E72BB1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE47CF22C2849C00E72BB1 /* Question.swift */; };
 		ACBE47D522C293F200E72BB1 /* SliderQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE47D422C293F200E72BB1 /* SliderQuestion.swift */; };
+		ACDE83CC22CBF4FE0038A681 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDE83CB22CBF4FE0038A681 /* Response.swift */; };
+		ACDE83D122CC030A0038A681 /* ReportResponseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDE83CF22CC030A0038A681 /* ReportResponseTableViewCell.swift */; };
+		ACDE83D222CC030A0038A681 /* ReportResponseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACDE83D022CC030A0038A681 /* ReportResponseTableViewCell.xib */; };
 		ACE5AAD022C9AF1600FCB58C /* CheckBoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5AACE22C9AF1600FCB58C /* CheckBoxTableViewCell.swift */; };
 		ACE5AAD122C9AF1600FCB58C /* CheckBoxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE5AACF22C9AF1600FCB58C /* CheckBoxTableViewCell.xib */; };
 		ACFE4E4A22A57C1F009409BD /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFE4E4922A57C1F009409BD /* TabBar.storyboard */; };
@@ -63,9 +65,11 @@
 		AC9B003F22A694E00067B02B /* SurveyItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurveyItemTableViewCell.xib; sourceTree = "<group>"; };
 		AC9B004222A6A9210067B02B /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 		ACB1C85B22CBBC0E009F22A0 /* ResponseReportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseReportsViewController.swift; sourceTree = "<group>"; };
-		ACB1C85C22CBBC0E009F22A0 /* ResponseReportsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResponseReportsCell.xib; sourceTree = "<group>"; };
 		ACBE47CF22C2849C00E72BB1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		ACBE47D422C293F200E72BB1 /* SliderQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderQuestion.swift; sourceTree = "<group>"; };
+		ACDE83CB22CBF4FE0038A681 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		ACDE83CF22CC030A0038A681 /* ReportResponseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportResponseTableViewCell.swift; sourceTree = "<group>"; };
+		ACDE83D022CC030A0038A681 /* ReportResponseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportResponseTableViewCell.xib; sourceTree = "<group>"; };
 		ACE5AACE22C9AF1600FCB58C /* CheckBoxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxTableViewCell.swift; sourceTree = "<group>"; };
 		ACE5AACF22C9AF1600FCB58C /* CheckBoxTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckBoxTableViewCell.xib; sourceTree = "<group>"; };
 		ACFE4E4922A57C1F009409BD /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
@@ -94,7 +98,7 @@
 				ACBE47D122C28E8200E72BB1 /* Question Types */,
 				AC06753B22A3205F00399E76 /* User.swift */,
 				AC9B004222A6A9210067B02B /* Survey.swift */,
-				ACBE47CF22C2849C00E72BB1 /* Question.swift */,
+				ACDE83CB22CBF4FE0038A681 /* Response.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +106,7 @@
 		AC06753622A3046500399E76 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ACE24DDD22CC749E00A4F7D8 /* Responses */,
 				ACB1C85F22CBBC2D009F22A0 /* Responses and Reports */,
 				AC08812122A91757008F0F61 /* Create */,
 				AC9B003D22A694820067B02B /* SurveyCell */,
@@ -232,7 +237,8 @@
 		ACB1C85F22CBBC2D009F22A0 /* Responses and Reports */ = {
 			isa = PBXGroup;
 			children = (
-				ACB1C85C22CBBC0E009F22A0 /* ResponseReportsCell.xib */,
+				ACDE83CF22CC030A0038A681 /* ReportResponseTableViewCell.swift */,
+				ACDE83D022CC030A0038A681 /* ReportResponseTableViewCell.xib */,
 			);
 			path = "Responses and Reports";
 			sourceTree = "<group>";
@@ -240,9 +246,17 @@
 		ACBE47D122C28E8200E72BB1 /* Question Types */ = {
 			isa = PBXGroup;
 			children = (
+				ACBE47CF22C2849C00E72BB1 /* Question.swift */,
 				ACBE47D422C293F200E72BB1 /* SliderQuestion.swift */,
 			);
 			path = "Question Types";
+			sourceTree = "<group>";
+		};
+		ACE24DDD22CC749E00A4F7D8 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 		ACE5AACD22C9AEB200FCB58C /* Checkbox,RadioGroupCell */ = {
@@ -350,7 +364,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACFE4E4A22A57C1F009409BD /* TabBar.storyboard in Resources */,
-				ACB1C85E22CBBC0E009F22A0 /* ResponseReportsCell.xib in Resources */,
 				AC97319F22A26A3C00A78D8A /* LaunchScreen.storyboard in Resources */,
 				AC08812E22A92820008F0F61 /* TextTableViewCell.xib in Resources */,
 				AC97319C22A26A3C00A78D8A /* Images.xcassets in Resources */,
@@ -358,6 +371,7 @@
 				ACE5AAD122C9AF1600FCB58C /* CheckBoxTableViewCell.xib in Resources */,
 				AC9B004122A694E10067B02B /* SurveyItemTableViewCell.xib in Resources */,
 				AC08813322A930DD008F0F61 /* SliderTableViewCell.xib in Resources */,
+				ACDE83D222CC030A0038A681 /* ReportResponseTableViewCell.xib in Resources */,
 				AC97319A22A26A3B00A78D8A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +446,7 @@
 				ACBE47D022C2849C00E72BB1 /* Question.swift in Sources */,
 				AC08813522A955FF008F0F61 /* CreateTableViewController.swift in Sources */,
 				AC97319722A26A3B00A78D8A /* ViewController.swift in Sources */,
+				ACDE83CC22CBF4FE0038A681 /* Response.swift in Sources */,
 				ACBE47D522C293F200E72BB1 /* SliderQuestion.swift in Sources */,
 				ACE5AAD022C9AF1600FCB58C /* CheckBoxTableViewCell.swift in Sources */,
 				AC06753C22A3205F00399E76 /* User.swift in Sources */,
@@ -447,6 +462,7 @@
 				AC9B004322A6A9210067B02B /* Survey.swift in Sources */,
 				AC9731A922A2C55D00A78D8A /* RegisterViewController.swift in Sources */,
 				ACFE4E5022A57F68009409BD /* MySurveysViewController.swift in Sources */,
+				ACDE83D122CC030A0038A681 /* ReportResponseTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

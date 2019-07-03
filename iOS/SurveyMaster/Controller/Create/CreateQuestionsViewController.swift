@@ -31,7 +31,7 @@ class CreateQuestionsViewController: UIViewController{
         value = "text"
         slider = SliderQuestion("Title", "type")
         
-        self.types = ["short text","slider","paragraph","checkbox","radioGroup","range","rating"]
+        self.types = ["slider","short text","paragraph","checkbox","radioGroup","range","rating","dropDown"]
         super.init(coder: aDecoder)
         
     }
