@@ -17,6 +17,8 @@
 		AC08813322A930DD008F0F61 /* SliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC08813122A930DD008F0F61 /* SliderTableViewCell.xib */; };
 		AC08813522A955FF008F0F61 /* CreateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC08813422A955FF008F0F61 /* CreateTableViewController.swift */; };
 		AC08813A22A960D6008F0F61 /* Create.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC08813922A960D6008F0F61 /* Create.storyboard */; };
+		AC498F4922CD9DB800D555F0 /* BarChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC498F4722CD9DB800D555F0 /* BarChartTableViewCell.swift */; };
+		AC498F4A22CD9DB800D555F0 /* BarChartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC498F4822CD9DB800D555F0 /* BarChartTableViewCell.xib */; };
 		AC97319522A26A3B00A78D8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC97319422A26A3B00A78D8A /* AppDelegate.swift */; };
 		AC97319722A26A3B00A78D8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC97319622A26A3B00A78D8A /* ViewController.swift */; };
 		AC97319A22A26A3B00A78D8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC97319822A26A3B00A78D8A /* Main.storyboard */; };
@@ -54,6 +56,8 @@
 		AC08813122A930DD008F0F61 /* SliderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderTableViewCell.xib; sourceTree = "<group>"; };
 		AC08813422A955FF008F0F61 /* CreateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTableViewController.swift; sourceTree = "<group>"; };
 		AC08813922A960D6008F0F61 /* Create.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Create.storyboard; sourceTree = "<group>"; };
+		AC498F4722CD9DB800D555F0 /* BarChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartTableViewCell.swift; sourceTree = "<group>"; };
+		AC498F4822CD9DB800D555F0 /* BarChartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarChartTableViewCell.xib; sourceTree = "<group>"; };
 		AC97319122A26A3B00A78D8A /* SurveyMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurveyMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC97319422A26A3B00A78D8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC97319622A26A3B00A78D8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +195,15 @@
 			path = SliderCell;
 			sourceTree = "<group>";
 		};
+		AC498F4322CD9D4700D555F0 /* ReportsCells */ = {
+			isa = PBXGroup;
+			children = (
+				AC498F4722CD9DB800D555F0 /* BarChartTableViewCell.swift */,
+				AC498F4822CD9DB800D555F0 /* BarChartTableViewCell.xib */,
+			);
+			path = ReportsCells;
+			sourceTree = "<group>";
+		};
 		AC97318822A26A3B00A78D8A = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +256,7 @@
 		ACB1C85F22CBBC2D009F22A0 /* Responses and Reports */ = {
 			isa = PBXGroup;
 			children = (
+				AC498F4322CD9D4700D555F0 /* ReportsCells */,
 				ACDE83CF22CC030A0038A681 /* ReportResponseTableViewCell.swift */,
 				ACDE83D022CC030A0038A681 /* ReportResponseTableViewCell.xib */,
 			);
@@ -374,6 +388,7 @@
 				AC08812E22A92820008F0F61 /* TextTableViewCell.xib in Resources */,
 				AC97319C22A26A3C00A78D8A /* Images.xcassets in Resources */,
 				AC08813A22A960D6008F0F61 /* Create.storyboard in Resources */,
+				AC498F4A22CD9DB800D555F0 /* BarChartTableViewCell.xib in Resources */,
 				ACE5AAD122C9AF1600FCB58C /* CheckBoxTableViewCell.xib in Resources */,
 				AC9B004122A694E10067B02B /* SurveyItemTableViewCell.xib in Resources */,
 				AC08813322A930DD008F0F61 /* SliderTableViewCell.xib in Resources */,
@@ -460,6 +475,7 @@
 				AC973CA622CD1C5300E31509 /* ReportsViewController.swift in Sources */,
 				ACE24DE122CC945A00A4F7D8 /* ResponsesReportsViewController.swift in Sources */,
 				ACBE47D522C293F200E72BB1 /* SliderQuestion.swift in Sources */,
+				AC498F4922CD9DB800D555F0 /* BarChartTableViewCell.swift in Sources */,
 				ACE5AAD022C9AF1600FCB58C /* CheckBoxTableViewCell.swift in Sources */,
 				AC06753C22A3205F00399E76 /* User.swift in Sources */,
 				AC08813222A930DD008F0F61 /* SliderTableViewCell.swift in Sources */,

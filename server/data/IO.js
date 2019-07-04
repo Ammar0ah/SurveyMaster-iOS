@@ -6,13 +6,13 @@ const {
      exists,
      removeFile
 } = require('./dataUtils')
+const devDeugger = require('../debugger');
 
 const SURVEYS_PATH = 'data/db/surveys'
 const RESPONSES_PATH = 'data/db/surveys/responses'
 const PAGES_PATH = 'data/db/surveys/pages'
 const ANSWERS_PATH = 'data/db/surveys/responses/answers'
 const USERS_PATH = 'data/db/users'
-
 class IO {
      /// pages section ///
 
@@ -90,20 +90,16 @@ class IO {
      static async loadSurveyResponsesById(surveyId) {
           let responses = []
           try {
-               let responsesInfo = await this.loadSurveyResponsesInfoById(
-                    surveyId
-               )
-               if (!responsesInfo) responsesInfo = []
-               for (let response of responsesInfo) {
-                    responses.push(
-                         await this.loadEntirResponseById(
-                              surveyId,
-                              response._id
-                         )
-                    )
+               let responsesInfo = await this.loadSurveyResponsesInfoById(surveyId)
+               if (!responsesInfo || !_.isArray(responses)) responsesInfo = []
+               // devDeugger("1", responses);
+               for (let _response of responsesInfo) {
+                    const response = await this.loadEntirResponseById(surveyId, _response._id)
+                    if (response)
+                         responses.push(response)
                }
           } catch (e) {
-               console.log(e)
+               devDeugger(e)
           }
           return responses
      }
@@ -191,10 +187,11 @@ class IO {
      // saving user
      static async saveUser(user) {
           await saveJson(`${USERS_PATH}/${user._id}.json`, user)
+
           let accounts = await loadJson(`${USERS_PATH}/accounts.json`)
           if (!accounts || !_.isArray(accounts)) accounts = []
-          let index = accounts.findIndex(account => account._id === user._id)
-          if (index && index != -1) {
+          let index = accounts.findIndex(account => account.userId === user._id)
+          if (index && index == -1) {
                accounts.push({
                     userId: user._id,
                     email: user.email
@@ -202,7 +199,16 @@ class IO {
           }
           await saveJson(`${USERS_PATH}/accounts.json`, accounts)
      }
-
+     static async removeUserById(userId) {
+          await removeFile(`${USERS_PATH}/${userId}.json`);
+          let accounts = await IO.loadAccounts();
+          if (!accounts || !_.isArray(accounts)) accounts = [];
+          let index = accounts.findIndex(account => account.userId === user._id)
+          if (index && index != -1) {
+               accounts.splice(index, 1);
+          }
+          await saveJson(`${USERS_PATH}/accounts.json`, accounts);
+     }
      // load user by id
      static async findUserById(userId) {
           return await loadJson(`${USERS_PATH}/${userId}.json`)
@@ -232,7 +238,7 @@ class IO {
 }
 async function test() {
      let accounts = await IO.loadAccounts()
-     console.log(accounts)
+     devDeugger(accounts)
 }
 test()
 module.exports = IO

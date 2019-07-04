@@ -13,9 +13,13 @@ import Charts
 class ReportsViewController: UIViewController {
     var Sid : String = ""
     var reports : [Report] = []
-    var i = -1
-    @IBOutlet var chartView: UIView!
-    
+    var i = 0
+    var chartView: BarChartView!
+    var pieChartView : PieChartView!
+    var lineChart : LineChartView!
+    var bubbleChart : BubbleChartView!
+    var tempView : UIView!
+    @IBOutlet var parentView: UIView!
     @IBOutlet var previousBtn: UIButton!
     
     @IBOutlet var nextBtn: UIButton!
@@ -24,6 +28,11 @@ class ReportsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getRequest(url: ShowSurveysURL+"/\(Sid)/report")
+        chartView = BarChartView(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
+        chartView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+          pieChartView = PieChartView(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
+            lineChart = LineChartView(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
+        bubbleChart = BubbleChartView(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
         // Do any additional setup after loading the view.
     }
     
@@ -39,7 +48,7 @@ class ReportsViewController: UIViewController {
                         
                         let json = JSON(response)
                         self.updateAnswers(json: json)
-                        print(json.arrayValue)
+                        print(json)
                         group.leave()
                     }
                 }
@@ -50,18 +59,21 @@ class ReportsViewController: UIViewController {
     
     
     @IBAction func nextBtn(_ sender: UIButton) {
-          if !reports.isEmpty  {
+        nextBtn.titleLabel?.text! = "Next"
+     
+        if !reports.isEmpty  {
             
-        
-        i += 1
-  
-        
-        if i == reports.count  {
-            i = 0
-        }
-        
-        questionTitleLabel.text! = reports[i].title
-        setupChart(type: reports[i].type, i: i)
+            
+            i += 1
+            
+            
+            if i == reports.count  {
+                i = 0
+            }
+            
+            questionTitleLabel.text! = reports[i].title
+            setupChart(type: reports[i].type, i: i)
+               print(reports[i].type)
         }
     }
     
@@ -76,13 +88,19 @@ class ReportsViewController: UIViewController {
             reports.append(report)
             print(report.content)
         }
+        questionTitleLabel.text! = reports[i].title
+        
         print(reports.count)
     }
     
     
     func setupChart(type:String,i : Int){
+        if tempView != nil{
+            tempView.removeFromSuperview()
+        }
         switch type {
-        case "QUESTION_TEXT":
+        case "QUESTION_TEXT" , "QUESTION_PARAGRAPH" :
+          
             var entries : [BarChartDataEntry] = []
             var j = 1
             for (key,value) in reports[i].content{
@@ -91,25 +109,94 @@ class ReportsViewController: UIViewController {
             }
             let dataset = BarChartDataSet(entries: entries, label: reports[i].title)
             let data = BarChartData(dataSets: [dataset])
-            var chart = chartView as! BarChartView
-            chart.data = data
-            chart.chartDescription?.text = reports[i].title
+            let chart = chartView
+            chart?.data = data
+            chart?.chartDescription?.text = reports[i].title
             dataset.colors = ChartColorTemplates.vordiplom()
-            chart.notifyDataSetChanged()
+            chart?.animate(yAxisDuration: 0.5)
+            chart?.notifyDataSetChanged()
+            parentView.addSubview(chart!)
+            tempView = chartView as! BarChartView
+            
             break
-       // case "Q":
+        case "QUESTION_RADIO_GROUP" , "QUESTION_SLIDER" , "QUESTION_DROPDOWN" , "QUESTION_RATING" :
+         
+            var j = 0.0
+            var entries : [ChartDataEntry] = []
+            for (key,value) in reports[i].content{
+                entries.append(ChartDataEntry(x: j, y: JSON(value).doubleValue))
+                j += 1
+            }
+            let dataset = LineChartDataSet(entries: entries, label: reports[i].title)
+            let data = LineChartData(dataSets: [dataset])
+            let chart = lineChart
+            chart?.data = data
+            chart?.chartDescription?.text = "Single Choice"
+            chart?.animate(yAxisDuration: 0.5)
+            chart?.animate(yAxisDuration: 0.4)
+            chart?.notifyDataSetChanged()
+            parentView.addSubview(chart!)
+            tempView = lineChart as! LineChartView
+            break
+            
+        case "QUESTION_CHECKBOX":
+          
+            var entries : [PieChartDataEntry] = []
+            for (key,value) in reports[i].content{
+                entries.append(PieChartDataEntry(value: JSON(value).doubleValue, label: key))
+            }
+               let dataset = PieChartDataSet(entries: entries, label: reports[i].title)
+            let data = PieChartData(dataSets: [dataset])
+            dataset.colors = [UIColor.flatRed() , UIColor.flatYellow() , UIColor.flatOrange()]
+            let chart = pieChartView
+            chart?.data = data
+            chart?.chartDescription?.text = "Multiple Choice"
+            chart?.animate(yAxisDuration: 0.4)
+            chart?.animate(xAxisDuration: 0.4)
+            chart?.notifyDataSetChanged()
+            parentView.addSubview(pieChartView)
+            tempView = pieChartView  as? PieChartView
+            
+            break
+        case "QUESTION_RANGE":
+            if tempView != nil{
+                tempView.removeFromSuperview()
+            }
+            var j = 0.0
+            var entries : [BubbleChartDataEntry] = []
+            for (key,value) in reports[i].content{
+                entries.append(BubbleChartDataEntry(x: j, y: value.doubleValue, size: 0.5))
+                j += 1
+            }
+            let dataset = BubbleChartDataSet(entries: entries, label: reports[i].title)
+            let data = BubbleChartData(dataSets: [dataset])
+            dataset.colors = [UIColor.flatRed() , UIColor.flatYellow() , UIColor.flatOrange()]
+            let chart = bubbleChart
+            chart?.data = data
+            chart?.chartDescription?.text = "Range Choice"
+            chart?.animate(yAxisDuration: 0.4)
+            chart?.animate(xAxisDuration: 0.4)
+            chart?.notifyDataSetChanged()
+            parentView.addSubview(bubbleChart)
+            tempView = bubbleChart as BubbleChartView
+            
+            break
         default:
-         return
+            if tempView != nil{
+                tempView.removeFromSuperview()
+            }
+            return
+            
         }
-           }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
-
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

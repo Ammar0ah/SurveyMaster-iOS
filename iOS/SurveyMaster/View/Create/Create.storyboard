@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,55 +10,66 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Create Surveys-->
-        <scene sceneID="cIt-49-uyY">
+        <!--Create Table View Controller-->
+        <scene sceneID="LPl-QC-f3q">
             <objects>
-                <tableViewController storyboardIdentifier="Create" id="ePk-jo-wSv" customClass="CreateTableViewController" customModule="SurveyMaster" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fBc-fj-cDg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController storyboardIdentifier="Create" id="1ws-Pg-azh" customClass="CreateTableViewController" customModule="SurveyMaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tYA-G5-evv" customClass="C">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HYZ-w1-Ztt">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HYZ-w1-Ztt" id="EJw-T2-thS">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ePk-jo-wSv" id="E4S-0V-9Rx"/>
-                            <outlet property="delegate" destination="ePk-jo-wSv" id="37U-ma-OyW"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Create Surveys" id="cUH-NH-5zl">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="abR-1p-58W">
-                            <connections>
-                                <segue destination="kuQ-3q-13a" kind="show" identifier="Create" id="zo5-7g-aY4"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eh5-hl-aZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's start adding some questions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfX-dF-mMQ">
+                                <rect key="frame" x="13.333333333333343" y="160" width="387.33333333333326" height="31.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                <color key="textColor" red="0.80000000000000004" green="0.75686274509803919" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6q-ui-gaj">
+                                <rect key="frame" x="107" y="391.66666666666669" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.60392156862745094" green="0.66274509803921566" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Bui-1S-Cnx"/>
+                                    <constraint firstAttribute="width" constant="200" id="Ubf-00-3Fu"/>
+                                </constraints>
+                                <state key="normal" title="Create">
+                                    <color key="titleColor" red="0.33333333329999998" green="0.23529411759999999" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="kuQ-3q-13a" kind="show" id="mcf-YI-noC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.33333333329999998" green="0.23529411759999999" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="F6q-ui-gaj" firstAttribute="centerX" secondItem="tYA-G5-evv" secondAttribute="centerX" id="Jpq-eY-7jd"/>
+                            <constraint firstItem="F6q-ui-gaj" firstAttribute="top" secondItem="kfX-dF-mMQ" secondAttribute="bottom" constant="200" id="jK8-xC-WjD"/>
+                            <constraint firstItem="kfX-dF-mMQ" firstAttribute="centerX" secondItem="tYA-G5-evv" secondAttribute="centerX" id="kVq-Pk-sEk"/>
+                            <constraint firstItem="kfX-dF-mMQ" firstAttribute="top" secondItem="wBG-zk-58n" secondAttribute="top" constant="140" id="yMZ-Lo-3Rz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wBG-zk-58n"/>
+                    </view>
+                    <connections>
+                        <outlet property="createBtn" destination="F6q-ui-gaj" id="VIl-Ae-kbl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zq8-HR-bCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1211.5942028985507" y="-9.375"/>
+            <point key="canvasLocation" x="1328.985507246377" y="-9.375"/>
         </scene>
         <!--Create Questions-->
         <scene sceneID="iB0-hw-V9R">
             <objects>
                 <viewController title="Create Questions" modalTransitionStyle="partialCurl" modalPresentationStyle="pageSheet" id="kuQ-3q-13a" customClass="CreateQuestionsViewController" customModule="SurveyMaster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="woZ-a9-XoN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cqx-Ad-hH7">
-                                <rect key="frame" x="0.0" y="205" width="414" height="468"/>
+                                <rect key="frame" x="0.0" y="85" width="414" height="467"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kxj-S3-HOC" userLabel="Title view">
-                                <rect key="frame" x="0.0" y="140" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="60"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e0w-b9-Vc8">
                                         <rect key="frame" x="181" y="10" width="200" height="40"/>
@@ -88,7 +99,7 @@
                                 </constraints>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pzc-lF-k1P">
-                                <rect key="frame" x="0.0" y="773" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="652" width="414" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="6ca-Vo-N4I"/>
                                 </constraints>
@@ -106,13 +117,13 @@
                                 </items>
                             </toolbar>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7R-fI-PXx">
-                                <rect key="frame" x="0.0" y="673" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="552" width="414" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Qdi-tL-jTF"/>
                                 </constraints>
                             </pickerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXb-Kl-g8L">
-                                <rect key="frame" x="0.0" y="200" width="414" height="5"/>
+                                <rect key="frame" x="0.0" y="80" width="414" height="5"/>
                                 <color key="backgroundColor" red="0.66902792453765869" green="0.73128575086593628" blue="0.94889926910400391" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="5" id="Ix9-se-LgF"/>
@@ -172,12 +183,18 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ShK-Hw-0Gt" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="xyz-1j-Hsq">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.33333333329999998" green="0.23529411759999999" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ePk-jo-wSv" kind="relationship" relationship="rootViewController" id="PlU-TK-Sz2"/>
+                        <segue destination="1ws-Pg-azh" kind="show" id="ZVe-GF-oKo"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NWq-fY-sD4" userLabel="First Responder" sceneMemberID="firstResponder"/>

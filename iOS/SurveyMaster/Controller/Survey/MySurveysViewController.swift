@@ -15,15 +15,15 @@ import SwiftMoment
 import ChameleonFramework
 
 class MySurveysViewControl: UITableViewController {
- 
+    var tempSurveys = [Survey]()
     var surveys = [Survey]()
-
+  var length = 0
     lazy var refresher: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:
             #selector(refresh),
                                  for: .valueChanged)
-        refreshControl.tintColor = UIColor.gray
+        refreshControl.tintColor = UIColor.flatWhite()
 
         return refreshControl
     }()
@@ -32,7 +32,7 @@ class MySurveysViewControl: UITableViewController {
         super.viewDidLoad()
         tableView.separatorStyle = .none
         validatingSession(loader: true)
-        //self.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+      
         tableView.refreshControl = refresher
 
         setupTableViewCell()
@@ -45,6 +45,7 @@ class MySurveysViewControl: UITableViewController {
         super.viewWillAppear(animated)
     }
     @objc func refresh(){
+     //   surveys = []
        // refreshControl?.beginRefreshing()
         validatingSession(loader:false)
         //tableView.reloadData()
@@ -64,8 +65,11 @@ class MySurveysViewControl: UITableViewController {
                 if response.result.isSuccess{
                     if let response = response.result.value {
                         let data = JSON(response).arrayValue
-                        
-                        self.updateSurveyObject(data:data)
+                        if data.count == self.tempSurveys.count {
+                             SVProgressHUD.dismiss()
+                            return
+                        }
+                        self.updateSurveyObject(data:data,loader:loader)
                         SVProgressHUD.dismiss()
                        // print("response" ,response)
                   
@@ -93,8 +97,9 @@ class MySurveysViewControl: UITableViewController {
         return surveys.count
     }
     //MARK:- configuring json
-    func updateSurveyObject(data: [JSON]){
-        for item in data{
+    func updateSurveyObject(data: [JSON],loader: Bool){
+        
+       for item in data{
             let survey = Survey()
             survey.id = item["_id"].stringValue
             survey.title = item["title"].stringValue
@@ -104,7 +109,10 @@ class MySurveysViewControl: UITableViewController {
             survey.link = item["link"].stringValue
             surveys.append(survey)
             tableView.reloadData()
-        }
+            
+        
+             }
+        tempSurveys = surveys
         
         
     }
