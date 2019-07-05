@@ -1,6 +1,6 @@
 > # iOS Survey Manager App
 
-> Create full stack apps with React and Express. Run your client and server with a single command. 
+
 
 > ## Application Features
  1. Sign in / Sign up 
@@ -25,8 +25,8 @@ Survey Manager Application built with iOS Swift
 
 
 ## About Me: 
-[LinkedIn][https://www.linkedin.com/in/ammar-al-helali-968803146]
-[Facebook][https://www.facebook.com/ammar.helali]
+* [LinkedIn](https://www.linkedin.com/in/ammar-al-helali-968803146)
+* [Facebook](https://www.facebook.com/ammar.helali)
 
 
 ### Version
