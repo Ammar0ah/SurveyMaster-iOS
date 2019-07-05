@@ -15,13 +15,13 @@
 Survey Manager Application built with iOS Swift 
 
  ### *Some screenshots from the app*
-* ![](iOS/images/Screen Shot1)
-* ![](iOS/images/Screen Shot2)
-* ![](iOS/images/Screen Shot3)
-* ![](iOS/images/Screen Shot4)
-* ![](iOS/images/Screen Shot5)
-* ![](iOS/images/Screen Shot6)
-* ![](iOS/images/Screen Shot7)
+* ![](iOS/images/Screen%20Shot1.png)
+* ![](iOS/images/Screen%20Shot2.png)
+* ![](iOS/images/Screen%20Shot3.png)
+* ![](iOS/images/Screen%20Shot4.png)
+* ![](iOS/images/Screen%20Shot5.png)
+* ![](iOS/images/Screen%20Shot6.png)
+* ![](iOS/images/Screen%20Shot7.png)
 
 
 
