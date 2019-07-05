@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SurveyMaster/View/Create/CreateQuestionCells/SliderCell/SliderTableViewCell.swift"
-            timestampString = "583785073.625131"
+            timestampString = "584023438.4979481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
@@ -160,6 +160,22 @@
             startingLineNumber = "64"
             endingLineNumber = "64"
             landmarkName = "nextBtn(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SurveyMaster/Controller/Survey/MySurveysViewController.swift"
+            timestampString = "584010396.578405"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "validatingSession(loader:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
