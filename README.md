@@ -1,28 +1,33 @@
-# React Express Starter Pack
+> # iOS Survey Manager App
 
 > Create full stack apps with React and Express. Run your client and server with a single command. 
 
-## Quick Start
+> ## Application Features
+ 1. Sign in / Sign up 
+ 2. Create a Survey 
+ 3. Show Created Surveys
+ 4. Manage Surveys(Delete,Share)
+ 5. Responses for Surveys
+ 6. Statistics for each response for each question in charts
 
-``` bash
-# Install dependencies for server and client
-yarn install
 
-# Run the client & server with concurrently
-yarn start
+> ### App Info
+Survey Manager Application built with iOS Swift 
 
-# Run the Express server only
-yarn server
+ ### *Some screenshots from the app*
 
-# Run the React client only
-yarn client
+ 
 
-# Server runs on http://localhost:5000 and client on http://localhost:3000
-```
 
-## App Info
-syrvey manager Application
-build with MERN teconology
+
+
+
+
+
+## About Me: 
+[LinkedIn][https://www.linkedin.com/in/ammar-al-helali-968803146]
+[Facebook][https://www.facebook.com/ammar.helali]
+
 
 ### Version
 
