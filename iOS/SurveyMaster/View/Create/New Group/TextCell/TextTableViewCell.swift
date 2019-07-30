@@ -29,9 +29,14 @@ class TextTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    override func prepareForReuse() {
-        self.questionTitleTxt.text! = ""
-    }
+//    override func prepareForReuse() {
+//        if let active = question.isActive {
+//            if !active{
+//               self.questionTitleTxt.text! = ""
+//            }
+//        }
+//
+//    }
 }
 extension TextTableViewCell : UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {

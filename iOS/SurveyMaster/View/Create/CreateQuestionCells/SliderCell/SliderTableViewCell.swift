@@ -73,15 +73,21 @@ class SliderTableViewCell: UITableViewCell {
         }
              returnValue?(slider)
     }
-    override func prepareForReuse() {
-        self.defaultValTxt.text! = ""
-        self.minLabelTxt.text! = ""
-        self.maxLabelTxt.text! = ""
-        self.maxTxt.text! = ""
-        self.minTxt.text! = ""
-        self.stepTxt.text! = ""
-        self.QuestionTxt.text! = ""
-    }
+//    override func prepareForReuse() {
+//        if let active = slider.isActive{
+//            if !active{
+//                self.defaultValTxt.text! = ""
+//                self.minLabelTxt.text! = ""
+//                self.maxLabelTxt.text! = ""
+//                self.maxTxt.text! = ""
+//                self.minTxt.text! = ""
+//                self.stepTxt.text! = ""
+//                self.QuestionTxt.text! = ""
+//            }
+//
+//
+//        }
+//    }
 }
 
 extension SliderTableViewCell : UITextFieldDelegate {

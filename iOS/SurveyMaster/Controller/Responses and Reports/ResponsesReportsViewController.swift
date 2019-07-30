@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-import SwiftHTTP
 class ResponsesReportsViewController: UIViewController {
     
     var R_id : String = ""
@@ -31,16 +30,17 @@ class ResponsesReportsViewController: UIViewController {
     
 //        let group = DispatchGroup()
 //        group.enter()
-        HTTP.GET(ShowSurveysURL+"/\(S_id)/responses/\(R_id)", parameters: nil, headers: header as! [String : String], completionHandler: {
+        Alamofire.request(ShowSurveysURL+"/\(S_id)/responses/\(R_id)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header as! HTTPHeaders)
+            .responseJSON{
             response in
-            print(response.URL)
+            print(response.request?.url)
             print(response)
             
-                    self.updateResponseContent(json: JSON(response.data))
+                    self.updateResponseContent(json: JSON(response.result.value))
             
                // group.leave()
             
-        })
+        }
 //        group.notify(queue: DispatchQueue.main) {
 //            print("Goodbye, world!")
 //            //exit(0)

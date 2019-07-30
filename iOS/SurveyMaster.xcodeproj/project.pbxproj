@@ -17,6 +17,10 @@
 		AC08813322A930DD008F0F61 /* SliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC08813122A930DD008F0F61 /* SliderTableViewCell.xib */; };
 		AC08813522A955FF008F0F61 /* CreateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC08813422A955FF008F0F61 /* CreateTableViewController.swift */; };
 		AC08813A22A960D6008F0F61 /* Create.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC08813922A960D6008F0F61 /* Create.storyboard */; };
+		AC0EB78F22E3A4A500265A7A /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0EB78E22E3A4A500265A7A /* PopUpViewController.swift */; };
+		AC12CFB122E072D300C18A7E /* FillAndReports.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC12CFB022E072D300C18A7E /* FillAndReports.storyboard */; };
+		AC38EF4E22DF4B5300884D39 /* Fill.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC38EF4D22DF4B5300884D39 /* Fill.swift */; };
+		AC38EF5122DF566600884D39 /* FillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC38EF5022DF566600884D39 /* FillViewController.swift */; };
 		AC498F4922CD9DB800D555F0 /* BarChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC498F4722CD9DB800D555F0 /* BarChartTableViewCell.swift */; };
 		AC498F4A22CD9DB800D555F0 /* BarChartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC498F4822CD9DB800D555F0 /* BarChartTableViewCell.xib */; };
 		AC97319522A26A3B00A78D8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC97319422A26A3B00A78D8A /* AppDelegate.swift */; };
@@ -56,6 +60,10 @@
 		AC08813122A930DD008F0F61 /* SliderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderTableViewCell.xib; sourceTree = "<group>"; };
 		AC08813422A955FF008F0F61 /* CreateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTableViewController.swift; sourceTree = "<group>"; };
 		AC08813922A960D6008F0F61 /* Create.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Create.storyboard; sourceTree = "<group>"; };
+		AC0EB78E22E3A4A500265A7A /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		AC12CFB022E072D300C18A7E /* FillAndReports.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FillAndReports.storyboard; sourceTree = "<group>"; };
+		AC38EF4D22DF4B5300884D39 /* Fill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fill.swift; sourceTree = "<group>"; };
+		AC38EF5022DF566600884D39 /* FillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillViewController.swift; sourceTree = "<group>"; };
 		AC498F4722CD9DB800D555F0 /* BarChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartTableViewCell.swift; sourceTree = "<group>"; };
 		AC498F4822CD9DB800D555F0 /* BarChartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarChartTableViewCell.xib; sourceTree = "<group>"; };
 		AC97319122A26A3B00A78D8A /* SurveyMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurveyMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +111,7 @@
 		AC06753522A3045900399E76 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AC38EF4C22DF4B4400884D39 /* Fill */,
 				ACBE47D122C28E8200E72BB1 /* Question Types */,
 				AC06753B22A3205F00399E76 /* User.swift */,
 				AC9B004222A6A9210067B02B /* Survey.swift */,
@@ -114,6 +123,7 @@
 		AC06753622A3046500399E76 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AC12CFAD22E0686A00C18A7E /* Surveys */,
 				ACE24DDD22CC749E00A4F7D8 /* Responses */,
 				ACB1C85F22CBBC2D009F22A0 /* Responses and Reports */,
 				AC08812122A91757008F0F61 /* Create */,
@@ -128,6 +138,7 @@
 		AC06753722A3047300399E76 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AC38EF4F22DF561B00884D39 /* Fill Survey  */,
 				ACB1C85A22CBBBC3009F22A0 /* Responses and Reports */,
 				AC08812422A91C30008F0F61 /* Create */,
 				AC97319422A26A3B00A78D8A /* AppDelegate.swift */,
@@ -193,6 +204,31 @@
 				AC08813122A930DD008F0F61 /* SliderTableViewCell.xib */,
 			);
 			path = SliderCell;
+			sourceTree = "<group>";
+		};
+		AC12CFAD22E0686A00C18A7E /* Surveys */ = {
+			isa = PBXGroup;
+			children = (
+				AC12CFB022E072D300C18A7E /* FillAndReports.storyboard */,
+			);
+			path = Surveys;
+			sourceTree = "<group>";
+		};
+		AC38EF4C22DF4B4400884D39 /* Fill */ = {
+			isa = PBXGroup;
+			children = (
+				AC38EF4D22DF4B5300884D39 /* Fill.swift */,
+			);
+			path = Fill;
+			sourceTree = "<group>";
+		};
+		AC38EF4F22DF561B00884D39 /* Fill Survey  */ = {
+			isa = PBXGroup;
+			children = (
+				AC38EF5022DF566600884D39 /* FillViewController.swift */,
+				AC0EB78E22E3A4A500265A7A /* PopUpViewController.swift */,
+			);
+			path = "Fill Survey ";
 			sourceTree = "<group>";
 		};
 		AC498F4322CD9D4700D555F0 /* ReportsCells */ = {
@@ -392,6 +428,7 @@
 				ACE5AAD122C9AF1600FCB58C /* CheckBoxTableViewCell.xib in Resources */,
 				AC9B004122A694E10067B02B /* SurveyItemTableViewCell.xib in Resources */,
 				AC08813322A930DD008F0F61 /* SliderTableViewCell.xib in Resources */,
+				AC12CFB122E072D300C18A7E /* FillAndReports.storyboard in Resources */,
 				ACDE83D222CC030A0038A681 /* ReportResponseTableViewCell.xib in Resources */,
 				AC97319A22A26A3B00A78D8A /* Main.storyboard in Resources */,
 			);
@@ -435,8 +472,9 @@
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/GSMessages/GSMessages.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftHTTP/SwiftHTTP.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMoment/SwiftMoment.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Wrap/Wrap.framework",
@@ -449,8 +487,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GSMessages.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftHTTP.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMoment.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Wrap.framework",
@@ -467,6 +506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC38EF4E22DF4B5300884D39 /* Fill.swift in Sources */,
 				AC9731A722A2BA3F00A78D8A /* LoginViewController.swift in Sources */,
 				ACBE47D022C2849C00E72BB1 /* Question.swift in Sources */,
 				AC08813522A955FF008F0F61 /* CreateTableViewController.swift in Sources */,
@@ -482,11 +522,13 @@
 				AC97319522A26A3B00A78D8A /* AppDelegate.swift in Sources */,
 				ACFE4E4C22A57E91009409BD /* TabBarController.swift in Sources */,
 				ACFE4E5522A5DA12009409BD /* AccountViewController.swift in Sources */,
+				AC0EB78F22E3A4A500265A7A /* PopUpViewController.swift in Sources */,
 				AC08812822A9275D008F0F61 /* CreateQuestionsViewController.swift in Sources */,
 				AC08812D22A92820008F0F61 /* TextTableViewCell.swift in Sources */,
 				ACB1C85D22CBBC0E009F22A0 /* ResponsesViewController.swift in Sources */,
 				AC9B004022A694E00067B02B /* SurveyItemTableViewCell.swift in Sources */,
 				AC06753A22A30CF100399E76 /* requests.swift in Sources */,
+				AC38EF5122DF566600884D39 /* FillViewController.swift in Sources */,
 				AC9B004322A6A9210067B02B /* Survey.swift in Sources */,
 				AC9731A922A2C55D00A78D8A /* RegisterViewController.swift in Sources */,
 				ACFE4E5022A57F68009409BD /* MySurveysViewController.swift in Sources */,

@@ -12,6 +12,6 @@ target 'SurveyMaster' do
     pod 'ChameleonFramework'
     pod 'SwiftMoment'
     pod 'Wrap'
-    pod 'SwiftHTTP'
+    pod 'RealmSwift'
     pod 'Charts'
 end

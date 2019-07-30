@@ -9,12 +9,18 @@
 import Foundation
 import UIKit
 import SwiftyJSON
-public class Survey {
-    var id : String?
-    var title : String?
-    var date : Int?
-    var description : String?
-    var link : String?
-    
-    
+import RealmSwift
+public class Survey : Object{
+  @objc dynamic var id : String?
+  @objc dynamic var title : String?
+     dynamic var date : Int?
+  @objc dynamic var descriptions : String?
+  @objc dynamic var link : String?
+   dynamic var isActivated : Bool?
+  var questions : [Question]?
+}
+
+struct postItem {
+    var surveyId: String?
+    var answers : [Question]
 }

@@ -47,7 +47,7 @@ class LoginViewController: UIViewController {
                         SVProgressHUD.dismiss(withDelay: 1.5)
                     }
                     else if let response = response.result.value {
-                        print("logged in")
+                        print(response)
                         self.defaults.set(response, forKey: "token")
                         self.performSegue(withIdentifier: "LoginToView", sender: self)
                     }

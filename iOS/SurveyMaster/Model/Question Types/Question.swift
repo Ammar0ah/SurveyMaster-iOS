@@ -10,9 +10,10 @@ import Foundation
 import SwiftyJSON
 
 public class Question {
-    
+    var _id : String?
     var title : String
     var type: String
+    var isActive : Bool?
     var content : Content = Content()
     //static var questions : [Question] = []
     init(_ title: String , _ type: String) {
@@ -37,7 +38,8 @@ struct Content{
     var defaultValue : Int?
     var step : Int?
     var choices : [String]?
-    init(min: Int? = nil ,max: Int? = nil , minLabel: String? = nil , maxLabel: String? = nil,defalt:Int? = nil , step:Int? = nil ,choices: [String]? = nil) {
+    var value : String?
+    init(min: Int? = nil ,max: Int? = nil , minLabel: String? = nil , maxLabel: String? = nil,defalt:Int? = nil , step:Int? = nil ,choices: [String]? = nil,value: String? = nil) {
         self.min = min
         self.max = max
         self.choices = choices

@@ -24,13 +24,14 @@ class CreateQuestionsViewController: UIViewController{
     var questionsList : [String]
     var value : String
     var question: Question
+    var bools : [Bool]
     required init?(coder aDecoder: NSCoder) {
         question = Question("Question", "short Text")
         questionsList = []
         pickerData = []
         value = "text"
         slider = SliderQuestion("Title", "type")
-        
+        bools = []
         self.types = ["slider","short text","paragraph","checkbox","radioGroup","range","rating","dropDown"]
         super.init(coder: aDecoder)
         
@@ -53,7 +54,7 @@ class CreateQuestionsViewController: UIViewController{
         var questionsStructList : [Questions] = []
         for question in questions {
             
-            var createItem = Questions(title: question.title, type: question.type, content: question.content)
+            let createItem = Questions(title: question.title, type: question.type, content: question.content)
             questionsStructList.append(createItem)
         }
         let createItem : CreateItem = CreateItem(title: titleTxt.text!,pages: [QuestionsArray(questions: questionsStructList)])
@@ -84,7 +85,7 @@ class CreateQuestionsViewController: UIViewController{
                                 SVProgressHUD.showError(withStatus: "Please fill all input and try again")
                                 //SVProgressHUD.dismiss()
                         }
-                        
+                        print(response.result)
                        
                     }
                     
@@ -110,6 +111,7 @@ class CreateQuestionsViewController: UIViewController{
     }
     
     func setupCell(for value: String , with indexPath: IndexPath,tableView:UITableView) ->UITableViewCell{
+           bools.append(false)
         if(value == "short text" || value == "paragraph" || value == "rating"){
             let cell = tableView.dequeueReusableCell(withIdentifier: "textCell", for: indexPath) as! TextTableViewCell
             if value == "rating"{
@@ -120,7 +122,7 @@ class CreateQuestionsViewController: UIViewController{
             }
             cell.returnValue = {
                 value in
-                
+                   value.isActive = self.bools[indexPath.row]
                 if self.value == "short text"{
                     value.type = "QUESTION_TEXT"
                 }
@@ -149,6 +151,7 @@ class CreateQuestionsViewController: UIViewController{
             }
          
             cell.returnValue = { value in
+             value.isActive = self.bools[indexPath.row]
                 if self.value == "slider" {
                     value.type = "QUESTION_SLIDER"
                 }
@@ -163,6 +166,7 @@ class CreateQuestionsViewController: UIViewController{
                 }
                
             }
+       
             
             return cell
         }
@@ -189,6 +193,7 @@ class CreateQuestionsViewController: UIViewController{
                 cell.images.image = UIImage(named:"drop-down-arrow")
             }
             cell.returnValue = { value in
+                   value.isActive = self.bools[indexPath.row]
                 if self.value == "checkbox"{
                     value.type = "QUESTION_CHECKBOX"
                 }
@@ -207,7 +212,7 @@ class CreateQuestionsViewController: UIViewController{
             
             return cell
         }
-        
+     
         return UITableViewCell()
         
     }
@@ -240,9 +245,11 @@ extension CreateQuestionsViewController : UITableViewDelegate,UITableViewDataSou
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+             bools[indexPath.row] = true
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         questionsList.remove(at: indexPath.row)
+        bools.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .left)
     }
     

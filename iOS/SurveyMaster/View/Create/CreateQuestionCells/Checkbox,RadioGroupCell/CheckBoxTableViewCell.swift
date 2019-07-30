@@ -42,23 +42,23 @@ class CheckBoxTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    
+
     @IBAction func txtChanged(_ sender: UITextField) {
-        if check.content.choices!.count > 0 {
-            
-       
-        if sender.tag == 0 {
-        check.content.choices?[0] = choice1.text!
-        }
-        if sender.tag == 1 {
-            check.content.choices?[1] = choice2.text!
-        }
-        if sender.tag == 2 {
-            check.content.choices?[2] =
-            choice3.text!
-        }
-             }
-        else {check.content.choices?.append(sender.text!)}
+//        if check.content.choices!.count > 0 {
+//
+//
+//        if sender.tag == 0 {
+//        check.content.choices?[0] = choice1.text!
+//        }
+//        if sender.tag == 1 {
+//            check.content.choices?[1] = choice2.text!
+//        }
+//        if sender.tag == 2 {
+//            check.content.choices?[2] =
+//            choice3.text!
+//        }
+//             }
+        check.content.choices?.append(sender.text!)
     }
     
 }

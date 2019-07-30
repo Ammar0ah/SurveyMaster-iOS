@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FBA433562253749EDB24152524713EDD"
+               BlueprintIdentifier = "BE95CD9323FC9E63D255E250F79F3681"
                BuildableName = "Wrap.framework"
                BlueprintName = "Wrap"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -13,10 +13,13 @@ import SVProgressHUD
 import GSMessages
 import SwiftMoment
 import ChameleonFramework
+import RealmSwift
 
 class MySurveysViewControl: UITableViewController {
     var tempSurveys = [Survey]()
     var surveys = [Survey]()
+    var storedSurveys = [Survey]()
+    let realm = try! Realm()
   var length = 0
     lazy var refresher: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -34,7 +37,7 @@ class MySurveysViewControl: UITableViewController {
         validatingSession(loader: true)
       
         tableView.refreshControl = refresher
-
+//        
         setupTableViewCell()
         // Do any additional setup after loading the view.
     }
@@ -80,6 +83,12 @@ class MySurveysViewControl: UITableViewController {
                     SVProgressHUD.dismiss()
                     print(response)
                     self.showMessage("Error happenend check your connection", type: .error)
+                    do {
+                        self.surveys = try Array(self.realm.objects(Survey.self))
+                        self.updateLocally(arr: self.surveys)
+                        
+                    }
+                    catch{}
                 }
                       group.leave()
 
@@ -98,62 +107,138 @@ class MySurveysViewControl: UITableViewController {
     }
     //MARK:- configuring json
     func updateSurveyObject(data: [JSON],loader: Bool){
+        surveys = []
         
-       for item in data{
+        do{
+            storedSurveys = Array(realm.objects(Survey.self))
+            for survey in storedSurveys{
+               try realm.write {
+                    try realm.delete(survey)
+                }
+            }
+        }
+        catch {}
+        
+        
+        for item in data{
             let survey = Survey()
             survey.id = item["_id"].stringValue
             survey.title = item["title"].stringValue
            // survey.description = item["description"].stringValue
-            survey.description = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+            survey.descriptions = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
             survey.date = item["date"].int
-            survey.link = item["link"].stringValue
+            survey.link = item["link"].stringValue       
             surveys.append(survey)
             tableView.reloadData()
+            do {
+               
+                try realm.write {
+                    realm.add(survey)
+                }
+            }
+            catch{}
             
         
              }
+      
+        
         tempSurveys = surveys
         
         
     }
+    func updateLocally(arr: [Survey]){
+        surveys = []
+        
+        for item in arr{
+            let survey = Survey()
+            survey.id = item.id
+            survey.title = item.title
+            // survey.description = item["description"].stringValue
+            survey.descriptions = item.descriptions
+            survey.date = item.date
+            survey.link = item.link
+            surveys.append(survey)
+            tableView.reloadData()
+           
+            
+        }
+        
+        
+        tempSurveys = surveys
+    }
     //MARK :- configuring table view cell
     func configureTableViewCell (cell : SurveyItemTableViewCell,index: IndexPath) -> SurveyItemTableViewCell{
+//        do{
+//            if let surveys = try realm.objects(surveys.self){
+//
+//            }
+//        }catch{}
+       
         surveys.reverse()
         let mysurvey = surveys[index.row]
         cell.titleLabel.text = mysurvey.title
         let colors : [UIColor] = [UIColor.flatGrayColorDark(),UIColor.flatNavyBlueColorDark(),UIColor.flatCoffeeColorDark()]
         let random = arc4random_uniform(2)
-        let date = moment(mysurvey.date!)
+        let date = moment(mysurvey.date ?? 0)
         let dateString = " \(date.day)-\(date.month)-\(date.year)"
         cell.DateLabel.text! = dateString
-//cell.selectionStyle =  UITableViewCell.SelectionStyle.none
-        
         cell.colorView.backgroundColor = colors[Int(random)]
-        cell.descriptionLabel.text = mysurvey.description
+        cell.descriptionLabel.text = mysurvey.descriptions
         return cell
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "responsesSegue" {
-//            if let segue = segue.destination as? ResponseReportsViewController {
-//                       // segue.delegate = self
-//                if let cell = sender as? SurveyItemTableViewCell,let indexPath = tableView.indexPath(for: cell) {
-//                    let id = surveys[indexPath.row].id
-//                    segue.Sid = id ?? "no id"
-//                    print(segue.Sid)
-//                }
-//            }
-//        }
-//    }
+
     
     
+    //MARK:- leading swipe action
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let fill = UIContextualAction(style: .normal, title: "") { (action, view, nil) in
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "UIViewController-osB-UH-js5") as? FillViewController
+            vc?.SurveyID = self.surveys[indexPath.row].id!
+            print( self.surveys[indexPath.row].id!)
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
+        fill.image = UIImage(named: "edit-file")
+        fill.backgroundColor = UIColor(hexString: "#1c2938")
+        let share = UIContextualAction(style: .normal, title: "") { (action, view, nil) in
+            let shareLink = "https://192.168.1.1:5000" + self.surveys[indexPath.row].link!
+            let activity = UIActivityViewController(activityItems: [shareLink], applicationActivities: nil)
+            self.present(activity,animated: true)
+
+           
+        }
+        share.image = UIImage(named: "share")
+        share.backgroundColor = UIColor(hexString: "216583")
+        let config = UISwipeActionsConfiguration(actions: [fill,share])
+        config.performsFirstActionWithFullSwipe = false
+        return config
+    }
     
     
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let qrCode = UIContextualAction(style: .destructive,title: "") { (action, view, nil) in
+            let popOverVC = UIStoryboard(name: "FillAndReports", bundle: nil).instantiateViewController(withIdentifier: "popUpViewController") as! PopUpViewController
+            popOverVC.SurveyID = self.surveys[indexPath.row].id!
+            
+            popOverVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            self.present(popOverVC, animated: true)
+        }
+        qrCode.backgroundColor = .orange
+        qrCode.image = UIImage(named: "qr-code")
+        //// delete
+        
+        
+        let delete = UIContextualAction(style: .destructive, title:"") { (action, view, nil) in
+           self.deleteButtonAction(tableView,indexPath)
+        }
+        delete.image = UIImage(named: "clear")
+        delete.backgroundColor = .red
+        return UISwipeActionsConfiguration(actions: [delete,qrCode])
+    }
     // MARK:- did select row at
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//    self.performSegue(withIdentifier: "responsesSegue", sender: self)
-//        tableView.deselectRow(at: indexPath, animated: true)
-         let vc = storyboard?.instantiateViewController(withIdentifier: "ResponsesViewController") as? ResponsesViewController
+       let vc = storyboard?.instantiateViewController(withIdentifier: "ResponsesViewController") as? ResponsesViewController
         vc?.Sid = surveys[indexPath.row].id!
         vc?.SName = surveys[indexPath.row].title!
         self.navigationController?.pushViewController(vc!, animated: true)
@@ -162,7 +247,7 @@ class MySurveysViewControl: UITableViewController {
     
     
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func deleteButtonAction(_ tableView: UITableView ,_ indexPath: IndexPath){
         let alert = UIAlertController(title: "Deleting Survey", message: "there's no step back, are you sure?", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: { (alert) in
@@ -180,9 +265,7 @@ class MySurveysViewControl: UITableViewController {
             self.validatingSession(loader : false)
         }))
         self.present(alert,animated: true)
-     
     }
-    
     // MARK :- Setup table view
     func setupTableViewCell(){
         tableView.register(UINib(nibName:"SurveyItemTableViewCell" , bundle: nil), forCellReuseIdentifier: "SurveyItemViewCell")
@@ -195,10 +278,10 @@ class MySurveysViewControl: UITableViewController {
         let url = DeleteURL + surveys[indexPath.row].id!
         print(surveys[indexPath.row].id!)
         print(surveys[indexPath.row].title!)
-        Alamofire.request(url, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: header as! HTTPHeaders)
+        Alamofire.request(url, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: header as? HTTPHeaders)
             .responseString {
                 response in
-                print(response.request)
+               // print(response.request)
                 if response.result.isSuccess{
                    if let statusCode = response.response?.statusCode{
                     print("status code",statusCode)
