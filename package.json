@@ -16,7 +16,7 @@
   "license": "MIT",
   "devDependencies": {
     "nodemon": "^1.14.6",
-    "yarn": "^1.15.2"
+    "yarn": "^1.22.0"
   },
   "dependencies": {
     "concurrently": "^3.5.1",
